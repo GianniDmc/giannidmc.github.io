@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage A & G</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #D2691E;
+            --color-accent: #CD853F;
+            --color-text: #4A4A4A;
+            --color-background: #FFFFFF;
+            --color-border: #8B4513;
+            --color-highlight: #8B4513;
+            --color-gold: #D4AF37;
+            --color-cream: #F5F5DC;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            padding-top: 60px;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        }
+
+        .container.mt-5 {
+            margin-top: 140px !important;
+        }
+
+        .navbar {
+            background-color: var(--color-background);
+            border-bottom: 2px solid var(--color-border);
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 60px;
+            z-index: 1030;
+        }
+
+        .navbar .container {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1031;
+            padding: 0;
+            margin: 0;
+            height: 60px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .navbar-brand img {
+            height: 180px;
+            width: auto;
+            object-fit: contain;
+            margin-top: 0;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            margin: 0 1.5rem;
+            padding: 0.5rem 1rem;
+            position: relative;
+            letter-spacing: 1px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            font-family: 'Cinzel', serif;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+            border-color: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            border: 2px solid var(--color-border);
+            background-color: var(--color-background);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: var(--color-background);
+            border-bottom: 2px solid var(--color-border);
+            font-family: 'Cinzel', serif;
+            padding: 1.5rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                height: auto;
+                padding: 0.5rem 0;
+            }
+
+            .navbar-brand {
+                position: relative;
+                left: 0;
+                transform: none;
+                height: auto;
+                margin: 0 1rem;
+            }
+            
+            .navbar-brand img {
+                height: 80px;
+                margin-top: 0;
+            }
+            
+            .nav-link {
+                margin: 0 0.5rem;
+                height: auto;
+            }
+
+            body {
+                padding-top: 80px;
+            }
+
+            .container.mt-5 {
+                margin-top: 2rem !important;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--color-border), 
+                transparent);
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-background) 100%);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+        }
+
+        .date-display {
+            font-size: 2rem;
+            color: var(--color-gold);
+            font-weight: bold;
+            margin: 2rem 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: var(--color-background);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid var(--color-border);
+            min-width: 100px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <div class="navbar-nav">
+                <a class="nav-link" href="notre-histoire.html">Notre Histoire</a>
+                <a class="nav-link" href="le-lieu.html">Le Lieu</a>
+            </div>
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/logo_ga.png" alt="A & G">
+            </a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="programme.html">Programme</a>
+                <a class="nav-link" href="inscription.html">Inscription</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="hero-section fade-in">
+            <h1 class="hero-title">A & G</h1>
+            <p class="hero-subtitle">Nous nous marions !</p>
+            <div class="date-display">15 Juin 2024</div>
+            
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">--</div>
+                    <div class="countdown-label">Jours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">--</div>
+                    <div class="countdown-label">Heures</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">--</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">--</div>
+                    <div class="countdown-label">Secondes</div>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <a href="inscription.html" class="btn btn-primary btn-lg">Confirmer ma présence</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3><i class="fas fa-heart"></i> Notre Histoire</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Découvrez notre parcours, de notre première rencontre à cette belle journée de mariage...</p>
+                        <a href="notre-histoire.html" class="btn btn-primary">Lire notre histoire</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3><i class="fas fa-map-marker-alt"></i> Le Lieu</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Informations sur le lieu de notre mariage, comment s'y rendre et où se loger...</p>
+                        <a href="le-lieu.html" class="btn btn-primary">Découvrir le lieu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-alt"></i> Programme</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Le déroulé de notre journée de mariage, les horaires et les différentes étapes...</p>
+                        <a href="programme.html" class="btn btn-primary">Voir le programme</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-plus"></i> Inscription</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Confirmez votre présence et donnez-nous vos informations pour organiser au mieux cette journée...</p>
+                        <a href="inscription.html" class="btn btn-primary">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Compteur à rebours
+        function updateCountdown() {
+            const weddingDate = new Date('2024-06-15T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<h2>Le grand jour est arrivé !</h2>';
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

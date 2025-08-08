@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Mariage A & G</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #D2691E;
+            --color-accent: #CD853F;
+            --color-text: #4A4A4A;
+            --color-background: #FFFFFF;
+            --color-border: #8B4513;
+            --color-highlight: #8B4513;
+            --color-gold: #D4AF37;
+            --color-cream: #F5F5DC;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            padding-top: 60px;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        }
+
+        .container.mt-5 {
+            margin-top: 140px !important;
+        }
+
+        .navbar {
+            background-color: var(--color-background);
+            border-bottom: 2px solid var(--color-border);
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 60px;
+            z-index: 1030;
+        }
+
+        .navbar .container {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1031;
+            padding: 0;
+            margin: 0;
+            height: 60px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .navbar-brand img {
+            height: 180px;
+            width: auto;
+            object-fit: contain;
+            margin-top: 0;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            margin: 0 1.5rem;
+            padding: 0.5rem 1rem;
+            position: relative;
+            letter-spacing: 1px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            font-family: 'Cinzel', serif;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+            border-color: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            border: 2px solid var(--color-border);
+            background-color: var(--color-background);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: var(--color-background);
+            border-bottom: 2px solid var(--color-border);
+            font-family: 'Cinzel', serif;
+            padding: 1.5rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                height: auto;
+                padding: 0.5rem 0;
+            }
+
+            .navbar-brand {
+                position: relative;
+                left: 0;
+                transform: none;
+                height: auto;
+                margin: 0 1rem;
+            }
+            
+            .navbar-brand img {
+                height: 80px;
+                margin-top: 0;
+            }
+            
+            .nav-link {
+                margin: 0 0.5rem;
+                height: auto;
+            }
+
+            body {
+                padding-top: 80px;
+            }
+
+            .container.mt-5 {
+                margin-top: 2rem !important;
+            }
+        }
+
+        .invite-supplementaire {
+            background-color: var(--color-background);
+            border-color: var(--color-border) !important;
+        }
+
+        .form-label {
+            font-family: 'Cinzel', serif;
+            color: var(--color-primary);
+        }
+
+        .form-control, .form-select {
+            border-color: var(--color-border);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 0.25rem rgba(139, 69, 19, 0.25);
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            display: none;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <div class="navbar-nav">
+                <a class="nav-link" href="notre-histoire.html">Notre Histoire</a>
+                <a class="nav-link" href="le-lieu.html">Le Lieu</a>
+            </div>
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/logo_ga.png" alt="A & G">
+            </a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="programme.html">Programme</a>
+                <a class="nav-link" href="inscription.html">Inscription</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-5">Inscription</h1>
+                
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> Votre inscription a été envoyée avec succès ! Nous vous recontacterons bientôt.
+                </div>
+                
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i> Une erreur est survenue lors de l'envoi. Veuillez réessayer.
+                </div>
+                
+                <form id="inscriptionForm" class="needs-validation" novalidate>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3>Vos informations</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="nom" class="form-label">Nom complet</label>
+                                <input type="text" class="form-control" id="nom" name="nom" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="telephone" class="form-label">Téléphone</label>
+                                <input type="tel" class="form-control" id="telephone" name="telephone" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Âge</label>
+                                <input type="number" class="form-control" id="age" name="age" min="0" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="regime_alimentaire" class="form-label">Régime alimentaire</label>
+                                <select class="form-select" id="regime_alimentaire" name="regime_alimentaire" required>
+                                    <option value="">Sélectionnez votre régime</option>
+                                    <option value="standard">Standard</option>
+                                    <option value="vegetarien">Végétarien</option>
+                                    <option value="vegan">Végétalien</option>
+                                    <option value="sans_gluten">Sans gluten</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="allergies" class="form-label">Allergies ou intolérances alimentaires</label>
+                                <textarea class="form-control" id="allergies" name="allergies" rows="2"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="commentaires" class="form-label">Commentaires ou préférences particulières</label>
+                                <textarea class="form-control" id="commentaires" name="commentaires" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3>Invitations supplémentaires</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="nb_invites" class="form-label">Nombre d'invités supplémentaires</label>
+                                <input type="number" class="form-control" id="nb_invites" name="nb_invites" min="0" max="5" value="0">
+                            </div>
+                            
+                            <div id="invites_supplementaires">
+                                <!-- Les champs pour les invités supplémentaires seront ajoutés dynamiquement ici -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Confirmer l'inscription</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Gestion des invités supplémentaires
+        document.getElementById('nb_invites').addEventListener('change', function() {
+            const container = document.getElementById('invites_supplementaires');
+            container.innerHTML = '';
+            
+            for (let i = 0; i < this.value; i++) {
+                const inviteDiv = document.createElement('div');
+                inviteDiv.className = 'invite-supplementaire mb-4 p-3 border rounded';
+                inviteDiv.innerHTML = `
+                    <h4 class="mb-3">Invité ${i + 1}</h4>
+                    <div class="mb-3">
+                        <label class="form-label">Nom complet</label>
+                        <input type="text" class="form-control" name="nom_supp_${i}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Âge</label>
+                        <input type="number" class="form-control" name="age_supp_${i}" min="0" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Régime alimentaire</label>
+                        <select class="form-select" name="regime_supp_${i}" required>
+                            <option value="">Sélectionnez le régime</option>
+                            <option value="standard">Standard</option>
+                            <option value="vegetarien">Végétarien</option>
+                            <option value="vegan">Végétalien</option>
+                            <option value="sans_gluten">Sans gluten</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Allergies ou intolérances alimentaires</label>
+                        <textarea class="form-control" name="allergies_supp_${i}" rows="2"></textarea>
+                    </div>
+                `;
+                container.appendChild(inviteDiv);
+            }
+        });
+
+        // Gestion du formulaire
+        document.getElementById('inscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupération des données du formulaire
+            const formData = new FormData(this);
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Envoi par email via Formspree (remplacez par votre endpoint)
+            // Vous pouvez utiliser Formspree, Netlify Forms, ou un autre service
+            const emailData = {
+                to: 'votre-email@example.com', // Remplacez par votre email
+                subject: 'Nouvelle inscription mariage A & G',
+                message: `
+                    Nouvelle inscription reçue :
+                    
+                    Nom: ${data.nom}
+                    Email: ${data.email}
+                    Téléphone: ${data.telephone}
+                    Âge: ${data.age}
+                    Régime alimentaire: ${data.regime_alimentaire}
+                    Allergies: ${data.allergies || 'Aucune'}
+                    Commentaires: ${data.commentaires || 'Aucun'}
+                    
+                    Invités supplémentaires: ${data.nb_invites || 0}
+                `
+            };
+            
+            // Exemple avec Formspree (gratuit)
+            // Remplacez l'URL par votre endpoint Formspree
+            fetch('https://formspree.io/f/votre-form-id', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(emailData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('inscriptionForm').reset();
+                    document.getElementById('invites_supplementaires').innerHTML = '';
+                } else {
+                    throw new Error('Erreur lors de l\'envoi');
+                }
+            })
+            .catch(error => {
+                document.getElementById('errorMessage').style.display = 'block';
+                console.error('Erreur:', error);
+            });
+        });
+    </script>
+</body>
+</html>
