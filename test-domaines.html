@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test des liens dynamiques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .domain-info {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        .test-links {
+            display: grid;
+            gap: 0.5rem;
+        }
+        .test-links a {
+            display: block;
+            padding: 0.5rem;
+            background: #f0f0f0;
+            text-decoration: none;
+            border-radius: 4px;
+            color: #333;
+        }
+        .test-links a:hover {
+            background: #e0e0e0;
+        }
+        .status {
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .info { background: #cce7ff; color: #004085; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test des liens dynamiques</h1>
+    
+    <div class="domain-info">
+        <strong>Domaine actuel:</strong> <span id="currentDomain"></span><br>
+        <strong>Configuration détectée:</strong> <span id="domainConfig"></span>
+    </div>
+
+    <div class="test-section">
+        <h2>Navigation principale</h2>
+        <div class="test-links">
+            <a href="mariage-gianni-anaelle/index.html">🏠 Accueil du site</a>
+            <a href="mariage-gianni-anaelle/notre-histoire.html">❤️ Notre Histoire</a>
+            <a href="mariage-gianni-anaelle/le-lieu.html">📍 Le Lieu</a>
+            <a href="mariage-gianni-anaelle/programme.html">📅 Programme</a>
+            <a href="mariage-gianni-anaelle/inscription.html">✍️ Inscription</a>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test de génération d'URLs</h2>
+        <p>Ces URLs sont générées dynamiquement selon le domaine :</p>
+        <ul id="generatedUrls"></ul>
+    </div>
+
+    <div class="status success">
+        <strong>✅ Système opérationnel</strong><br>
+        Les liens s'adaptent automatiquement selon que vous accédez via :
+        <ul>
+            <li><code>giannidmc.github.io</code> → <code>/mariage-gianni-anaelle/page.html</code></li>
+            <li><code>mariage-gianni-et-anaelle.giannidamico.com</code> → <code>/page.html</code></li>
+        </ul>
+    </div>
+
+    <script src="mariage-gianni-anaelle/static/js/dynamic-links.js"></script>
+    <script>
+        // Afficher les informations du domaine
+        document.getElementById('currentDomain').textContent = window.location.hostname;
+        
+        // Simuler la détection de configuration
+        const DOMAIN_CONFIG = {
+            'mariage-gianni-et-anaelle.giannidamico.com': {
+                basePath: '',
+                isCustomDomain: true
+            },
+            'giannidmc.github.io': {
+                basePath: 'mariage-gianni-anaelle',
+                isCustomDomain: false
+            }
+        };
+        
+        const config = DOMAIN_CONFIG[window.location.hostname] || DOMAIN_CONFIG['giannidmc.github.io'];
+        document.getElementById('domainConfig').textContent = config.isCustomDomain ? 'Domaine personnalisé' : 'GitHub Pages';
+        
+        // Générer des exemples d'URLs
+        const pages = ['index.html', 'notre-histoire.html', 'le-lieu.html', 'programme.html', 'inscription.html'];
+        const urlsList = document.getElementById('generatedUrls');
+        
+        pages.forEach(page => {
+            const li = document.createElement('li');
+            const url = window.createDynamicLink ? window.createDynamicLink(page) : `${config.basePath ? config.basePath + '/' : ''}${page}`;
+            li.innerHTML = `<code>${page}</code> → <code>${url}</code>`;
+            urlsList.appendChild(li);
+        });
+    </script>
+</body>
+</html>

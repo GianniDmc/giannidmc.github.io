@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection - Mariage Gianni & Anaëlle</title>
+    <style>
+        body {
+            font-family: 'Cinzel', serif;
+            background: #0e0e14;
+            color: #e8e3d7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .loader {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #c7a75b;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+        Redirection en cours...
+    </div>
+
+    <script>
+        // Configuration des points d'entrée selon le domaine
+        const domainConfig = {
+            // Domaine personnalisé -> version moderne
+            'mariage-gianni-et-anaelle.giannidamico.com': 'mariage-gianni-anaelle.html',
+            
+            // GitHub Pages par défaut -> version avec navigation
+            'giannidmc.github.io': 'mariage-gianni-anaelle/index.html',
+            
+            // Fallback pour autres domaines futurs
+            default: 'mariage-gianni-anaelle.html'
+        };
+
+        function redirectToMainSite() {
+            const currentDomain = window.location.hostname;
+            const currentPath = window.location.pathname;
+            const baseUrl = window.location.origin;
+            
+            // Si on est déjà sur une page spécifique, ne pas rediriger
+            if (currentPath !== '/' && currentPath !== '/index.html') {
+                return;
+            }
+            
+            // Déterminer la page de destination
+            let targetPage = domainConfig[currentDomain] || domainConfig.default;
+            
+            // Construire l'URL de redirection
+            const redirectUrl = `${baseUrl}/${targetPage}`;
+            
+            // Log pour debug (peut être retiré en production)
+            console.log(`Domaine détecté: ${currentDomain}`);
+            console.log(`Redirection vers: ${redirectUrl}`);
+            
+            // Redirection
+            window.location.href = redirectUrl;
+        }
+
+        // Exécuter la redirection après un court délai pour l'UX
+        setTimeout(redirectToMainSite, 500);
+    </script>
+</body>
+</html>
