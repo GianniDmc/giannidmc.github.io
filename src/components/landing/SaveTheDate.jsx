@@ -30,7 +30,8 @@ function SaveTheDate() {
 
                     <div className="relative z-10 text-center py-12 px-8">
                         {/* Opening */}
-                        <p className="font-medieval text-2xl text-gold mb-8 glow-gold">
+                        <p className="font-medieval text-2xl mb-8 glow-gold"
+                            style={{ color: '#E6B84D' }}>
                             Chers Proches & Amis
                         </p>
 
@@ -42,7 +43,7 @@ function SaveTheDate() {
 
                             <p>
                                 Après des années d'aventures partagées, de rires et de complicité,
-                                nous avons décidé de nous dire <span className="text-gold italic">"oui"</span> pour la vie.
+                                nous avons décidé de nous dire <span className="italic" style={{ color: '#E6B84D' }}>"oui"</span> pour la vie.
                             </p>
 
                             <p>
@@ -65,18 +66,18 @@ function SaveTheDate() {
                             }}>
                             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
                                 <div className="text-center">
-                                    <p className="font-cinzel text-xs text-gold/60 mb-2 tracking-[0.2em] uppercase">Date</p>
-                                    <p className="font-medieval text-2xl text-gold">10 Octobre 2026</p>
+                                    <p className="font-cinzel text-xs mb-2 tracking-[0.2em] uppercase" style={{ color: 'rgba(230, 184, 77, 0.6)' }}>Date</p>
+                                    <p className="font-medieval text-2xl" style={{ color: '#E6B84D' }}>10 Octobre 2026</p>
                                 </div>
                                 <div className="hidden md:block w-px h-16 bg-gold/20" />
                                 <div className="text-center">
-                                    <p className="font-cinzel text-xs text-gold/60 mb-2 tracking-[0.2em] uppercase">Lieu</p>
-                                    <p className="font-medieval text-2xl text-gold">Château de Mauriac</p>
+                                    <p className="font-cinzel text-xs mb-2 tracking-[0.2em] uppercase" style={{ color: 'rgba(230, 184, 77, 0.6)' }}>Lieu</p>
+                                    <p className="font-medieval text-2xl" style={{ color: '#E6B84D' }}>Château de Mauriac</p>
                                 </div>
                                 <div className="hidden md:block w-px h-16 bg-gold/20" />
                                 <div className="text-center">
-                                    <p className="font-cinzel text-xs text-gold/60 mb-2 tracking-[0.2em] uppercase">Heure</p>
-                                    <p className="font-medieval text-2xl text-gold">15h30</p>
+                                    <p className="font-cinzel text-xs mb-2 tracking-[0.2em] uppercase" style={{ color: 'rgba(230, 184, 77, 0.6)' }}>Heure</p>
+                                    <p className="font-medieval text-2xl" style={{ color: '#E6B84D' }}>15h30</p>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +88,7 @@ function SaveTheDate() {
                         </p>
 
                         {/* Signature */}
-                        <p className="mt-6 font-medieval text-xl text-gold">
+                        <p className="mt-6 font-medieval text-xl" style={{ color: '#E6B84D' }}>
                             Gianni & Anaëlle
                         </p>
                     </div>
