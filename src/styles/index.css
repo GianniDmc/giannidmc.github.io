@@ -1,5 +1,5 @@
 /* Import des polices - Cinzel pour le style elfique/LOTR */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=MedievalSharp&display=swap');
 
 /* Police Aniron (style LOTR) */
 @font-face {
@@ -78,7 +78,7 @@
   }
 
   .font-medieval {
-    font-family: 'Ringbearer', 'Cinzel', 'Georgia', serif;
+    font-family: 'MedievalSharp', 'Georgia', serif;
     letter-spacing: 0.02em;
   }
 
