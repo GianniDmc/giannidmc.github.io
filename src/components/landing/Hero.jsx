@@ -52,8 +52,8 @@ function Hero() {
                     </div>
                 </div>
 
-                {/* Names - LOTR Style */}
-                <h1 className="font-lotr text-4xl md:text-6xl lg:text-7xl mb-6 glow-amber"
+                {/* Names - LOTR Style with Ringbearer font */}
+                <h1 className="font-ringbearer text-4xl md:text-6xl lg:text-7xl mb-6 glow-amber"
                     style={{ color: '#C9A86C' }}>
                     <span className="inline-block hover:scale-105 transition-transform duration-300">Gianni</span>
                     <span className="text-parchment mx-3 md:mx-4 text-3xl md:text-4xl">&</span>

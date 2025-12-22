@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import Quest from './pages/Quest'
 import RSVP from './pages/RSVP'
+import Gallery from './pages/Gallery'
 import KonamiOverlay from './components/common/KonamiOverlay'
 import { useKonamiCode } from './hooks/useKonamiCode'
 import { SoundProvider } from './hooks/useSound'
@@ -31,6 +32,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/quest" element={<Quest />} />
                         <Route path="/rsvp" element={<RSVP />} />
+                        <Route path="/gallery" element={<Gallery />} />
                     </Routes>
                 </main>
                 <Footer />

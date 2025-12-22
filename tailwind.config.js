@@ -53,8 +53,9 @@ export default {
                 },
             },
             fontFamily: {
-                // Police style Seigneur des Anneaux (Ringbearer/Aniron style)
-                lotr: ['Aniron', 'Ringbearer', 'Cinzel Decorative', 'serif'],
+                // Police style Seigneur des Anneaux
+                lotr: ['Aniron', 'Cinzel Decorative', 'serif'],
+                ringbearer: ['Ringbearer', 'Aniron', 'Cinzel Decorative', 'serif'],
                 cinzel: ['Cinzel', 'serif'],
                 crimsonText: ['Crimson Text', 'serif'],
                 body: ['Crimson Text', 'Georgia', 'serif'],

@@ -11,6 +11,7 @@ function Navbar() {
         { path: '/', label: 'Taverne', icon: '🏰' },
         { path: '/quest', label: 'Quête', icon: '📜' },
         { path: '/rsvp', label: 'Rejoindre', icon: '⚔️' },
+        { path: '/gallery', label: 'Galerie', icon: '📸' },
     ]
 
     const handleClick = () => {

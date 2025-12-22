@@ -18,6 +18,15 @@
   font-display: swap;
 }
 
+/* Police Ringbearer (titres LOTR) */
+@font-face {
+  font-family: 'Ringbearer';
+  src: url('/fonts/ringbearer.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,7 +39,6 @@
 
   body {
     @apply font-body antialiased;
-    cursor: url('/cursors/sword-cursor.png') 0 0, auto;
     background-color: #1F1E1B;
   }
 
@@ -62,6 +70,11 @@
   .font-lotr {
     font-family: 'Aniron', 'Ringbearer', 'Cinzel Decorative', serif;
     letter-spacing: 0.05em;
+  }
+
+  .font-ringbearer {
+    font-family: 'Ringbearer', 'Aniron', 'Cinzel Decorative', serif;
+    letter-spacing: 0.02em;
   }
 
   .font-cinzel {
