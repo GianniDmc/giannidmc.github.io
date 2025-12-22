@@ -81,7 +81,8 @@
     font-family: 'Cinzel', serif;
   }
 
-  .font-crimson {
+  .font-crimson,
+  .font-crimsonText {
     font-family: 'Crimson Text', serif;
   }
 
