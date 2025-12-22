@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#722F37" stroke="#FFD700" stroke-width="4"/>
+  
+  <!-- Crossed swords -->
+  <g transform="translate(50,50)">
+    <!-- Left sword -->
+    <g transform="rotate(-45)">
+      <rect x="-4" y="-30" width="8" height="45" fill="#C0C0C0"/>
+      <rect x="-8" y="10" width="16" height="6" fill="#FFD700"/>
+      <polygon points="-4,-30 4,-30 0,-40" fill="#C0C0C0"/>
+    </g>
+    <!-- Right sword -->
+    <g transform="rotate(45)">
+      <rect x="-4" y="-30" width="8" height="45" fill="#C0C0C0"/>
+      <rect x="-8" y="10" width="16" height="6" fill="#FFD700"/>
+      <polygon points="-4,-30 4,-30 0,-40" fill="#C0C0C0"/>
+    </g>
+  </g>
+  
+  <!-- Game controller hint -->
+  <circle cx="50" cy="65" r="8" fill="none" stroke="#00FFFF" stroke-width="2"/>
+  <rect x="47" y="60" width="6" height="10" fill="#00FFFF"/>
+  <rect x="45" y="63" width="10" height="4" fill="#00FFFF"/>
+</svg>
