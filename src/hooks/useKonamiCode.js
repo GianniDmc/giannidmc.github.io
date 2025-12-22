@@ -9,8 +9,8 @@ const KONAMI_CODE = [
     'ArrowRight',
     'ArrowLeft',
     'ArrowRight',
-    'KeyB',
-    'KeyA',
+    'b',
+    'a',
 ]
 
 export function useKonamiCode() {
@@ -19,7 +19,15 @@ export function useKonamiCode() {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            const key = event.code
+            // Utiliser event.key pour les lettres (plus fiable sur tous les claviers)
+            let key = event.key
+
+            // Normaliser: pour les flèches on garde event.key, pour les lettres on met en minuscule
+            if (key.length === 1) {
+                key = key.toLowerCase()
+            }
+
+            console.log('Key pressed:', key) // Debug
 
             setInputSequence((prev) => {
                 const newSequence = [...prev, key].slice(-KONAMI_CODE.length)
@@ -31,6 +39,7 @@ export function useKonamiCode() {
                     )
 
                     if (isMatch && !activated) {
+                        console.log('KONAMI CODE ACTIVATED!')
                         setActivated(true)
                     }
                 }
