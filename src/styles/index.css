@@ -77,6 +77,11 @@
     letter-spacing: 0.02em;
   }
 
+  .font-medieval {
+    font-family: 'Aniron', 'Ringbearer', 'Cinzel Decorative', serif;
+    letter-spacing: 0.03em;
+  }
+
   .font-cinzel {
     font-family: 'Cinzel', serif;
   }
@@ -99,6 +104,13 @@
       0 0 10px rgba(150, 71, 52, 0.5),
       0 0 20px rgba(105, 39, 33, 0.4),
       0 0 40px rgba(105, 39, 33, 0.2);
+  }
+
+  .glow-gold {
+    text-shadow:
+      0 0 10px rgba(201, 168, 108, 0.5),
+      0 0 20px rgba(201, 168, 108, 0.3),
+      0 0 30px rgba(201, 168, 108, 0.15);
   }
 
   /* Medieval Border - Autumn tones */
