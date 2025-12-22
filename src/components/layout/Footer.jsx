@@ -55,10 +55,16 @@ function Footer() {
                     </div>
 
                     {/* Easter Egg Hint */}
-                    <p className="font-crimsonText text-xs italic animate-gentle-pulse"
-                        style={{ color: 'rgba(245, 237, 224, 0.2)' }}>
-                        ✨ Un secret se cache dans les touches de votre clavier...
-                    </p>
+                    <div className="group relative">
+                        <p className="font-crimsonText text-xs italic animate-gentle-pulse group-hover:animate-none transition-opacity duration-300 group-hover:opacity-20"
+                            style={{ color: 'rgba(245, 237, 224, 0.4)' }}>
+                            ✨ Un secret se cache dans les touches de votre clavier...
+                        </p>
+                        <p className="absolute inset-0 font-crimsonText text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            style={{ color: '#C9A86C' }}>
+                            🎮 Konami Code
+                        </p>
+                    </div>
                 </div>
             </div>
 
