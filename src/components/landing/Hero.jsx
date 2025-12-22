@@ -81,9 +81,9 @@ function Hero() {
                 {/* Quote - RPG style */}
                 <div className="max-w-2xl mx-auto mb-12">
                     <p className="font-crimsonText text-xl md:text-2xl text-parchment/90 italic leading-relaxed">
-                        "Deux aventuriers ont trouvé leur Player 2.
+                        "Deux aventuriers se sont trouvés.
                         <br />
-                        Le mariage est notre prochaine quête."
+                        Ensemble, ils écrivent leur légende."
                     </p>
                 </div>
 
