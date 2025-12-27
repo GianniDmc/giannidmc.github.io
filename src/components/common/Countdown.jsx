@@ -28,10 +28,10 @@ function Countdown({ targetDate }) {
     }, [targetDate])
 
     const timeBlocks = [
-        { value: timeLeft.days, label: 'Jours', icon: '🍂' },
-        { value: timeLeft.hours, label: 'Heures', icon: '🕐' },
-        { value: timeLeft.minutes, label: 'Minutes', icon: '⏳' },
-        { value: timeLeft.seconds, label: 'Secondes', icon: '🍁' },
+        { value: timeLeft.days, label: 'Jours' },
+        { value: timeLeft.hours, label: 'Heures' },
+        { value: timeLeft.minutes, label: 'Minutes' },
+        { value: timeLeft.seconds, label: 'Secondes' },
     ]
 
     if (timeLeft.expired) {
@@ -50,13 +50,17 @@ function Countdown({ targetDate }) {
             {/* Frame Top */}
             <div className="flex justify-center mb-6">
                 <div className="flex items-center space-x-4">
-                    <div className="w-12 h-px" style={{ background: 'linear-gradient(to right, transparent, #B78953)' }} />
-                    <span style={{ color: '#B78953' }} className="text-lg">❧</span>
-                    <span className="font-cinzel text-sm tracking-[0.2em] uppercase" style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
+                    <div className="w-16 h-px" style={{ background: 'linear-gradient(to right, transparent, #C9A86C)' }} />
+                    <span style={{ color: '#C9A86C' }} className="text-lg">❧</span>
+                    <span className="font-cinzel text-sm tracking-[0.2em] uppercase"
+                        style={{
+                            color: '#C9A86C',
+                            textShadow: '0 2px 4px rgba(0,0,0,0.8)'
+                        }}>
                         Compte à Rebours
                     </span>
-                    <span style={{ color: '#B78953' }} className="text-lg">❧</span>
-                    <div className="w-12 h-px" style={{ background: 'linear-gradient(to left, transparent, #B78953)' }} />
+                    <span style={{ color: '#C9A86C' }} className="text-lg">❧</span>
+                    <div className="w-16 h-px" style={{ background: 'linear-gradient(to left, transparent, #C9A86C)' }} />
                 </div>
             </div>
 
@@ -78,10 +82,7 @@ function Countdown({ targetDate }) {
                             <div className="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2" style={{ borderColor: 'rgba(183, 137, 83, 0.4)' }} />
                             <div className="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2" style={{ borderColor: 'rgba(183, 137, 83, 0.4)' }} />
 
-                            {/* Icon */}
-                            <div className="text-center text-2xl mb-3 animate-float opacity-80" style={{ animationDelay: `${index * 0.5}s` }}>
-                                {block.icon}
-                            </div>
+
 
                             {/* Number Display */}
                             <div className="relative">
@@ -108,9 +109,9 @@ function Countdown({ targetDate }) {
             {/* Frame Bottom */}
             <div className="flex justify-center mt-8">
                 <div className="flex items-center space-x-3">
-                    <div className="w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(183, 137, 83, 0.5))' }} />
-                    <span style={{ color: 'rgba(183, 137, 83, 0.5)' }} className="text-sm">🍂</span>
-                    <div className="w-8 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(183, 137, 83, 0.5))' }} />
+                    <div className="w-12 h-px" style={{ background: 'linear-gradient(to right, transparent, #C9A86C)' }} />
+                    <span style={{ color: '#C9A86C' }} className="text-sm">✦</span>
+                    <div className="w-12 h-px" style={{ background: 'linear-gradient(to left, transparent, #C9A86C)' }} />
                 </div>
             </div>
         </div>

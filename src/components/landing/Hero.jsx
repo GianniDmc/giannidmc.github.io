@@ -107,12 +107,9 @@ function Hero() {
                 </div>
             </div>
 
-            {/* Scroll indicator - outside content div */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 animate-gentle-pulse">
-                <div className="flex flex-col items-center" style={{ color: 'rgba(183, 137, 83, 0.6)' }}>
-                    <span className="font-crimsonText text-sm mb-2 tracking-wider">Découvrir</span>
-                    <span className="text-2xl">↓</span>
-                </div>
+            {/* Scroll indicator - subtle and elegant */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+                <span className="text-3xl" style={{ color: 'rgba(183, 137, 83, 0.6)' }}>⌄</span>
             </div>
 
             {/* Decorative corner elements - candles */}
