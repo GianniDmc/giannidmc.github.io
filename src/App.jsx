@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import ScrollToTop from './components/common/ScrollToTop'
 import Home from './pages/Home'
 import Quest from './pages/Quest'
 import RSVP from './pages/RSVP'
@@ -68,6 +69,7 @@ function App() {
                         borderRight: '2px solid #B78953',
                         borderBottom: '2px solid #B78953',
                     }} />
+                <ScrollToTop />
                 <Navbar />
                 <main>
                     <Routes>
