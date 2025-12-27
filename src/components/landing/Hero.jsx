@@ -3,7 +3,7 @@ import Countdown from '../common/Countdown'
 import Button from '../common/Button'
 
 // Import image for Vite
-import oneRingImage from '/images/one_ring.png'
+
 
 function Hero() {
     const weddingDate = '2026-10-10T15:30:00'
@@ -37,20 +37,8 @@ function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 text-center px-4 pt-20">
-                {/* The One Ring */}
-                <div className="mb-6 animate-float">
-                    <div className="relative inline-block">
-                        <img
-                            src={oneRingImage}
-                            alt="The One Ring"
-                            className="w-32 md:w-40 lg:w-48 h-auto"
-                            style={{
-                                filter: 'drop-shadow(0 0 15px rgba(183, 137, 83, 0.6)) drop-shadow(0 0 30px rgba(150, 71, 52, 0.4))',
-                            }}
-                        />
-                    </div>
-                </div>
+            <div className="relative z-10 text-center px-4 pt-32">
+
 
                 {/* Names - LOTR Style with Ringbearer font */}
                 <h1 className="font-ringbearer text-4xl md:text-6xl lg:text-7xl mb-6 glow-amber"

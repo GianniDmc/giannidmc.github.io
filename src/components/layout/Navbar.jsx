@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { useSound } from '../../hooks/useSound'
+import oneRingImage from '/images/one_ring.png'
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,14 +33,30 @@ function Navbar() {
                     <Link
                         to="/"
                         onClick={handleClick}
-                        className="flex items-center space-x-3 group"
+                        className="flex items-center space-x-1 group pl-2"
                     >
-                        <span className="text-2xl">🍁</span>
-                        <span className="font-lotr text-xl group-hover:opacity-80 transition-opacity"
-                            style={{ color: '#C9A86C' }}>
-                            G & A
+                        <span className="font-medieval text-2xl group-hover:scale-105 transition-transform"
+                            style={{
+                                color: '#E6B84D',
+                                textShadow: '0 0 12px rgba(230, 184, 77, 0.5), 0 2px 4px rgba(0,0,0,0.5)',
+                            }}>
+                            G
                         </span>
-                        <span className="text-2xl">💍</span>
+                        <img
+                            src={oneRingImage}
+                            alt="&"
+                            className="w-7 h-7 object-contain group-hover:rotate-12 transition-transform"
+                            style={{
+                                filter: 'drop-shadow(0 0 6px rgba(183, 137, 83, 0.6))',
+                            }}
+                        />
+                        <span className="font-medieval text-2xl group-hover:scale-105 transition-transform"
+                            style={{
+                                color: '#E6B84D',
+                                textShadow: '0 0 12px rgba(230, 184, 77, 0.5), 0 2px 4px rgba(0,0,0,0.5)',
+                            }}>
+                            A
+                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}
