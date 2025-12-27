@@ -8,7 +8,7 @@ function Navbar() {
     const { playClick, soundEnabled, toggleSound } = useSound()
 
     const navLinks = [
-        { path: '/', label: 'Taverne', icon: '🏰' },
+        { path: '/', label: 'Prologue', icon: '📖' },
         { path: '/quest', label: 'Quête', icon: '📜' },
         { path: '/rsvp', label: 'Rejoindre', icon: '⚔️' },
         { path: '/gallery', label: 'Galerie', icon: '📸' },

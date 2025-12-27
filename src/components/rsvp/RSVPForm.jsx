@@ -9,6 +9,7 @@ function RSVPForm() {
         firstName: '',
         lastName: '',
         email: '',
+        attending: 'yes', // 'yes' ou 'no'
         guestCount: 1,
         additionalGuests: [], // Noms des invités supplémentaires
         dietaryRestrictions: '',
@@ -70,10 +71,11 @@ function RSVPForm() {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
                 email: formData.email,
-                guestCount: formData.guestCount,
-                additionalGuests: guestNames,
-                dietaryRestrictions: formData.dietaryRestrictions,
-                attendBrunch: formData.attendBrunch ? 'Oui' : 'Non',
+                attending: formData.attending === 'yes' ? 'Oui' : 'Non',
+                guestCount: formData.attending === 'yes' ? formData.guestCount : 0,
+                additionalGuests: formData.attending === 'yes' ? guestNames : '',
+                dietaryRestrictions: formData.attending === 'yes' ? formData.dietaryRestrictions : '',
+                attendBrunch: formData.attending === 'yes' && formData.attendBrunch ? 'Oui' : 'Non',
                 message: formData.message,
                 timestamp: new Date().toISOString(),
             }
@@ -88,6 +90,7 @@ function RSVPForm() {
                 body: JSON.stringify(submitData),
             })
 
+            setWasAttending(formData.attending === 'yes')
             setSubmitStatus('success')
             playSuccess()
 
@@ -95,6 +98,7 @@ function RSVPForm() {
                 firstName: '',
                 lastName: '',
                 email: '',
+                attending: 'yes',
                 guestCount: 1,
                 additionalGuests: [],
                 dietaryRestrictions: '',
@@ -109,40 +113,59 @@ function RSVPForm() {
         }
     }
 
+    const [wasAttending, setWasAttending] = useState(true)
+
     if (submitStatus === 'success') {
         return (
             <div className="text-center py-12">
                 <div className="animate-float mb-8">
-                    <span className="text-7xl">🏆</span>
+                    <span className="text-7xl">{wasAttending ? '🏆' : '💌'}</span>
                 </div>
                 <h3 className="font-lotr text-3xl mb-4 glow-amber"
                     style={{ color: '#C9A86C' }}>
-                    Inscription Validée !
+                    {wasAttending ? 'Inscription Validée !' : 'Réponse Enregistrée'}
                 </h3>
-                <div className="inline-block px-6 py-3 mb-6"
-                    style={{
-                        background: 'rgba(76, 86, 63, 0.3)',
-                        border: '1px solid rgba(76, 86, 63, 0.5)'
-                    }}>
-                    <p className="font-cinzel text-sm" style={{ color: '#B78953' }}>
-                        🎮 ACHIEVEMENT UNLOCKED: Membre de la Commu
-                    </p>
-                </div>
-                <div className="flex items-center justify-center space-x-4 mb-6">
-                    <div className="w-12 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(183, 137, 83, 0.5))' }} />
-                    <span style={{ color: '#B78953' }}>⚔️</span>
-                    <div className="w-12 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(183, 137, 83, 0.5))' }} />
-                </div>
-                <p className="font-crimsonText text-xl max-w-md mx-auto mb-8 italic"
-                    style={{ color: 'rgba(245, 237, 224, 0.8)' }}>
-                    Vous avez rejoint le groupe ! Rendez-vous au Château de Mauriac
-                    le 10 Octobre 2026 pour l'aventure.
-                </p>
+                {wasAttending ? (
+                    <>
+                        <div className="inline-block px-6 py-3 mb-6"
+                            style={{
+                                background: 'rgba(76, 86, 63, 0.3)',
+                                border: '1px solid rgba(76, 86, 63, 0.5)'
+                            }}>
+                            <p className="font-cinzel text-sm" style={{ color: '#B78953' }}>
+                                🎮 ACHIEVEMENT UNLOCKED: Membre de la Communauté
+                            </p>
+                        </div>
+                        <div className="flex items-center justify-center space-x-4 mb-6">
+                            <div className="w-12 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(183, 137, 83, 0.5))' }} />
+                            <span style={{ color: '#B78953' }}>⚔️</span>
+                            <div className="w-12 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(183, 137, 83, 0.5))' }} />
+                        </div>
+                        <p className="font-crimsonText text-xl max-w-md mx-auto mb-8 italic"
+                            style={{ color: 'rgba(245, 237, 224, 0.8)' }}>
+                            Vous avez rejoint le groupe ! Rendez-vous au Château de Mauriac
+                            le 10 Octobre 2026 pour l'aventure.
+                        </p>
+                    </>
+                ) : (
+                    <>
+                        <div className="flex items-center justify-center space-x-4 mb-6">
+                            <div className="w-12 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(183, 137, 83, 0.5))' }} />
+                            <span style={{ color: '#B78953' }}>💔</span>
+                            <div className="w-12 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(183, 137, 83, 0.5))' }} />
+                        </div>
+                        <p className="font-crimsonText text-xl max-w-md mx-auto mb-8 italic"
+                            style={{ color: 'rgba(245, 237, 224, 0.8)' }}>
+                            Nous sommes désolés que vous ne puissiez pas être présent.
+                            Vous resterez dans nos pensées ce jour-là !
+                        </p>
+                    </>
+                )}
                 <Button
                     variant="ghost"
                     onClick={() => setSubmitStatus(null)}
                 >
-                    Nouvelle inscription
+                    Nouvelle réponse
                 </Button>
             </div>
         )
@@ -215,120 +238,181 @@ function RSVPForm() {
                     />
                 </div>
 
-                {/* Guest Count */}
-                <div>
-                    <label className="block font-cinzel text-sm mb-2 tracking-wider uppercase"
-                        style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
-                        Taille du groupe (vous inclus) *
-                    </label>
-                    <select
-                        name="guestCount"
-                        value={formData.guestCount}
-                        onChange={handleChange}
-                        className="medieval-input appearance-none cursor-pointer"
-                    >
-                        {[1, 2, 3, 4, 5, 6].map(num => (
-                            <option key={num} value={num}>
-                                {num} {num === 1 ? 'aventurier' : 'aventuriers'}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                {/* Additional Guests Names */}
-                {formData.additionalGuests.length > 0 && (
-                    <div className="space-y-4">
-                        <p className="font-cinzel text-sm tracking-wider"
-                            style={{ color: '#B78953' }}>
-                            👥 Membres du groupe
-                        </p>
-                        {formData.additionalGuests.map((guest, index) => (
-                            <div key={index} className="medieval-card">
-                                <p className="font-cinzel text-xs mb-3 tracking-wider"
-                                    style={{ color: 'rgba(183, 137, 83, 0.6)' }}>
-                                    Aventurier #{index + 2}
-                                </p>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    <input
-                                        type="text"
-                                        value={guest.firstName}
-                                        onChange={(e) => handleGuestChange(index, 'firstName', e.target.value)}
-                                        className="medieval-input"
-                                        placeholder="Prénom"
-                                        required
-                                    />
-                                    <input
-                                        type="text"
-                                        value={guest.lastName}
-                                        onChange={(e) => handleGuestChange(index, 'lastName', e.target.value)}
-                                        className="medieval-input"
-                                        placeholder="Nom"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                {/* Dietary Restrictions */}
-                <div>
-                    <label className="block font-cinzel text-sm mb-2 tracking-wider uppercase"
-                        style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
-                        Allergies / Buffs alimentaires
-                    </label>
-                    <textarea
-                        name="dietaryRestrictions"
-                        value={formData.dietaryRestrictions}
-                        onChange={handleChange}
-                        rows={3}
-                        className="medieval-input resize-none"
-                        placeholder="Végétarien, sans gluten, allergie aux noix..."
-                    />
-                    <p className="text-sm mt-2 font-crimsonText italic"
-                        style={{ color: 'rgba(245, 237, 224, 0.5)' }}>
-                        ℹ️ Indiquez les restrictions pour chaque membre du groupe
-                    </p>
-                </div>
-
-                {/* Brunch Checkbox */}
+                {/* Attendance Choice */}
                 <div className="medieval-card">
-                    <label className="flex items-start space-x-4 cursor-pointer group">
-                        <input
-                            type="checkbox"
-                            name="attendBrunch"
-                            checked={formData.attendBrunch}
-                            onChange={handleChange}
-                            className="medieval-checkbox mt-1"
-                        />
+                    <p className="font-cinzel text-sm mb-4 tracking-wider"
+                        style={{ color: '#B78953' }}>
+                        🎯 Votre réponse *
+                    </p>
+                    <div className="space-y-3">
+                        <label className="flex items-center space-x-3 cursor-pointer group">
+                            <input
+                                type="radio"
+                                name="attending"
+                                value="yes"
+                                checked={formData.attending === 'yes'}
+                                onChange={handleChange}
+                                className="w-5 h-5 accent-amber-600"
+                            />
+                            <span className="font-crimsonText text-lg group-hover:opacity-80 transition-opacity"
+                                style={{ color: formData.attending === 'yes' ? '#C9A86C' : 'rgba(245, 237, 224, 0.7)' }}>
+                                ✅ Je participe à l'aventure !
+                            </span>
+                        </label>
+                        <label className="flex items-center space-x-3 cursor-pointer group">
+                            <input
+                                type="radio"
+                                name="attending"
+                                value="no"
+                                checked={formData.attending === 'no'}
+                                onChange={handleChange}
+                                className="w-5 h-5 accent-amber-600"
+                            />
+                            <span className="font-crimsonText text-lg group-hover:opacity-80 transition-opacity"
+                                style={{ color: formData.attending === 'no' ? '#C9A86C' : 'rgba(245, 237, 224, 0.7)' }}>
+                                😢 Je ne pourrai malheureusement pas venir
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                {/* Show rest of form only if attending */}
+                {formData.attending === 'yes' && (
+                    <>
+                        {/* Guest Count */}
                         <div>
-                            <p className="font-cinzel text-lg group-hover:opacity-80 transition-opacity"
-                                style={{ color: '#C9A86C' }}>
-                                🌅 Quête Bonus : Brunch du Lendemain
-                            </p>
-                            <p className="font-crimsonText text-sm mt-1 italic"
-                                style={{ color: 'rgba(245, 237, 224, 0.7)' }}>
-                                Dimanche 11 Octobre à 10h00 — +150 XP et régénération complète
+                            <label className="block font-cinzel text-sm mb-2 tracking-wider uppercase"
+                                style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
+                                Taille du groupe (vous inclus) *
+                            </label>
+                            <select
+                                name="guestCount"
+                                value={formData.guestCount}
+                                onChange={handleChange}
+                                className="medieval-input appearance-none cursor-pointer"
+                            >
+                                {[1, 2, 3, 4, 5, 6].map(num => (
+                                    <option key={num} value={num}>
+                                        {num} {num === 1 ? 'aventurier' : 'aventuriers'}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+
+                        {/* Additional Guests Names */}
+                        {formData.additionalGuests.length > 0 && (
+                            <div className="space-y-4">
+                                <p className="font-cinzel text-sm tracking-wider"
+                                    style={{ color: '#B78953' }}>
+                                    👥 Membres du groupe
+                                </p>
+                                {formData.additionalGuests.map((guest, index) => (
+                                    <div key={index} className="medieval-card">
+                                        <p className="font-cinzel text-xs mb-3 tracking-wider"
+                                            style={{ color: 'rgba(183, 137, 83, 0.6)' }}>
+                                            Aventurier #{index + 2}
+                                        </p>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <input
+                                                type="text"
+                                                value={guest.firstName}
+                                                onChange={(e) => handleGuestChange(index, 'firstName', e.target.value)}
+                                                className="medieval-input"
+                                                placeholder="Prénom"
+                                                required
+                                            />
+                                            <input
+                                                type="text"
+                                                value={guest.lastName}
+                                                onChange={(e) => handleGuestChange(index, 'lastName', e.target.value)}
+                                                className="medieval-input"
+                                                placeholder="Nom"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        {/* Dietary Restrictions */}
+                        <div>
+                            <label className="block font-cinzel text-sm mb-2 tracking-wider uppercase"
+                                style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
+                                Allergies / Buffs alimentaires
+                            </label>
+                            <textarea
+                                name="dietaryRestrictions"
+                                value={formData.dietaryRestrictions}
+                                onChange={handleChange}
+                                rows={3}
+                                className="medieval-input resize-none"
+                                placeholder="Végétarien, sans gluten, allergie aux noix..."
+                            />
+                            <p className="text-sm mt-2 font-crimsonText italic"
+                                style={{ color: 'rgba(245, 237, 224, 0.5)' }}>
+                                ℹ️ Indiquez les restrictions pour chaque membre du groupe
                             </p>
                         </div>
-                    </label>
-                </div>
 
-                {/* Message */}
-                <div>
-                    <label className="block font-cinzel text-sm mb-2 tracking-wider uppercase"
-                        style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
-                        Message aux organisateurs (optionnel)
-                    </label>
-                    <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={3}
-                        className="medieval-input resize-none"
-                        placeholder="Un mot, une question, un sort de bénédiction..."
-                    />
-                </div>
+                        {/* Brunch Checkbox */}
+                        <div className="medieval-card">
+                            <label className="flex items-start space-x-4 cursor-pointer group">
+                                <input
+                                    type="checkbox"
+                                    name="attendBrunch"
+                                    checked={formData.attendBrunch}
+                                    onChange={handleChange}
+                                    className="medieval-checkbox mt-1"
+                                />
+                                <div>
+                                    <p className="font-cinzel text-lg group-hover:opacity-80 transition-opacity"
+                                        style={{ color: '#C9A86C' }}>
+                                        🌅 Quête Bonus : Brunch du Lendemain
+                                    </p>
+                                    <p className="font-crimsonText text-sm mt-1 italic"
+                                        style={{ color: 'rgba(245, 237, 224, 0.7)' }}>
+                                        Dimanche 11 Octobre à 10h00 — +150 XP et régénération complète
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+
+                        {/* Message */}
+                        <div>
+                            <label className="block font-cinzel text-sm mb-2 tracking-wider uppercase"
+                                style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
+                                Message aux organisateurs (optionnel)
+                            </label>
+                            <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                rows={3}
+                                className="medieval-input resize-none"
+                                placeholder="Un mot, une question, un sort de bénédiction..."
+                            />
+                        </div>
+                    </>
+                )}
+
+                {/* Message - always show for decline too */}
+                {formData.attending === 'no' && (
+                    <div>
+                        <label className="block font-cinzel text-sm mb-2 tracking-wider uppercase"
+                            style={{ color: 'rgba(183, 137, 83, 0.8)' }}>
+                            Un petit mot ? (optionnel)
+                        </label>
+                        <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            rows={3}
+                            className="medieval-input resize-none"
+                            placeholder="Nous aurions adoré être là mais..."
+                        />
+                    </div>
+                )}
 
                 {/* Error Message */}
                 {submitStatus === 'error' && (
@@ -351,24 +435,20 @@ function RSVPForm() {
                 <div className="text-center pt-6">
                     <Button
                         type="submit"
-                        variant="confirm"
+                        variant={formData.attending === 'yes' ? 'confirm' : 'royal'}
                         size="xl"
                         disabled={isSubmitting}
                         className={isSubmitting ? 'animate-gentle-pulse' : ''}
                     >
                         {isSubmitting ? (
                             <>⏳ Envoi du parchemin...</>
+                        ) : formData.attending === 'yes' ? (
+                            <>✅ Confirmer ma participation</>
                         ) : (
-                            <>🎮 Valider l'inscription</>
+                            <>📨 Envoyer ma réponse</>
                         )}
                     </Button>
                 </div>
-
-                {/* Privacy note */}
-                <p className="text-center text-xs mt-6 font-crimsonText"
-                    style={{ color: 'rgba(245, 237, 224, 0.4)' }}>
-                    🔒 Vos données sont protégées par un sort de confidentialité de niveau 9.
-                </p>
             </form>
         </div>
     )
