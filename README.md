@@ -52,24 +52,33 @@ Le formulaire envoie les réponses à un Google Sheet via Apps Script.
 
 ```javascript
 function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var data = JSON.parse(e.postData.contents);
-  
-  sheet.appendRow([
-    data.timestamp,
-    data.firstName,
-    data.lastName,
-    data.email,
-    data.guestCount,
-    data.additionalGuests,
-    data.dietaryRestrictions,
-    data.attendBrunch,
-    data.message
-  ]);
-  
-  return ContentService.createTextOutput('OK');
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    
+    sheet.appendRow([
+      data.timestamp,
+      data.firstName,
+      data.lastName,
+      data.email,
+      data.attending,           // "Oui" ou "Non"
+      data.guestCount,
+      data.additionalGuests,
+      data.dietaryRestrictions,
+      data.attendBrunch,
+      data.message
+    ]);
+    
+    return ContentService.createTextOutput(JSON.stringify({status: 'success'}))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch(error) {
+    return ContentService.createTextOutput(JSON.stringify({status: 'error', message: error.toString()}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
 }
 ```
+
+**Colonnes du Sheet** : Date | Prénom | Nom | Email | Présence | Nb Invités | Invités Supp. | Allergies | Brunch | Message
 
 **Déployer en** : Application Web → Accès : Tout le monde
 
