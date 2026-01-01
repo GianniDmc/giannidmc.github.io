@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -b main",
-    "save": "git add . && git commit -m \"Mise à jour\" && git push origin source",
+    "save": "git add . && (git commit -m \"Mise à jour\" || true) && git push origin source",
     "publish": "npm run save && npm run deploy"
   },
   "dependencies": {
