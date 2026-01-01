@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SectionTitle from '../components/common/SectionTitle'
 
 function Gallery() {
     // État pour savoir si le mariage a eu lieu et si les photos sont disponibles
@@ -13,13 +14,12 @@ function Gallery() {
             {/* Header */}
             <section className="py-16 px-4">
                 <div className="max-w-4xl mx-auto text-center">
-                    <span className="text-5xl mb-4 block">📸</span>
-                    <h1 className="section-title mb-6">
+                    <SectionTitle
+                        icon="📸"
+                        subtitle="Les souvenirs de notre quête légendaire"
+                    >
                         Chroniques Visuelles
-                    </h1>
-                    <p className="font-crimson text-xl text-parchment/80 italic">
-                        Les souvenirs de notre quête légendaire
-                    </p>
+                    </SectionTitle>
                 </div>
             </section>
 
@@ -41,7 +41,7 @@ function Gallery() {
                                 <span className="text-6xl">🔮</span>
                             </div>
 
-                            <h2 className="font-lotr text-2xl mb-6" style={{ color: '#C9A86C' }}>
+                            <h2 className="font-lotr text-2xl mb-6 glow-amber" style={{ color: '#C9A86C' }}>
                                 La quête n'a pas encore eu lieu...
                             </h2>
 
@@ -76,7 +76,7 @@ function Gallery() {
             <section className="py-12 px-4">
                 <div className="max-w-2xl mx-auto text-center">
                     <div className="medieval-card py-8 px-6">
-                        <h3 className="font-lotr text-xl mb-4" style={{ color: '#C9A86C' }}>
+                        <h3 className="font-lotr text-xl mb-4 glow-amber" style={{ color: '#C9A86C' }}>
                             📷 Appel aux Aventuriers
                         </h3>
                         <p className="font-crimson text-parchment/80 leading-relaxed">
@@ -95,3 +95,4 @@ function Gallery() {
 }
 
 export default Gallery
+

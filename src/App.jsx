@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import ScrollToTop from './components/common/ScrollToTop'
+import HelpButton from './components/common/HelpButton'
 import Home from './pages/Home'
 import Quest from './pages/Quest'
 import RSVP from './pages/RSVP'
 import Gallery from './pages/Gallery'
+import Help from './pages/Help'
 import KonamiOverlay from './components/common/KonamiOverlay'
 import { useKonamiCode } from './hooks/useKonamiCode'
 import { SoundProvider } from './hooks/useSound'
@@ -77,9 +79,13 @@ function App() {
                         <Route path="/quest" element={<Quest />} />
                         <Route path="/rsvp" element={<RSVP />} />
                         <Route path="/gallery" element={<Gallery />} />
+                        <Route path="/aide" element={<Help />} />
                     </Routes>
                 </main>
                 <Footer />
+
+                {/* Floating Help Button */}
+                <HelpButton />
 
                 {showKonamiOverlay && (
                     <KonamiOverlay onClose={() => setShowKonamiOverlay(false)} />
