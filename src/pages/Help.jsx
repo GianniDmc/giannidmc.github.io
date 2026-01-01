@@ -42,6 +42,15 @@ function Help() {
             title: 'Le jour J',
             description: 'Retrouvez-nous au Château de Mauriac le 10 Octobre 2026 pour vivre cette aventure ensemble !',
             icon: '🏰'
+        },
+        {
+            number: 6,
+            title: 'Après l\'aventure',
+            description: 'Après le mariage, retrouvez les photos de cette journée sur la Galerie. Vous pourrez aussi nous envoyer vos propres clichés pour enrichir nos souvenirs !',
+            link: '/gallery',
+            linkText: 'Accéder à la galerie',
+            icon: '📸',
+            future: true
         }
     ]
 
