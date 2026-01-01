@@ -43,7 +43,7 @@ function Quest() {
             {/* <Timeline /> */}
 
             {/* Placeholder pour le déroulé */}
-            <section className="py-20 px-4">
+            <section id="programme" className="py-20 px-4">
                 <div className="max-w-2xl mx-auto text-center">
                     <div className="medieval-card">
                         <div className="text-5xl mb-6">⏳</div>
@@ -63,8 +63,8 @@ function Quest() {
                 </div>
             </section>
 
-            <Location />
-            <Accommodation />
+            <div id="localisation"><Location /></div>
+            <div id="hebergements"><Accommodation /></div>
             <DressCode />
         </div>
     )

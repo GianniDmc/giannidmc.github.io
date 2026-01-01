@@ -4,8 +4,8 @@ import SaveTheDate from '../components/landing/SaveTheDate'
 function Home() {
     return (
         <div>
-            <Hero />
-            <SaveTheDate />
+            <div id="invitation"><Hero /></div>
+            <div id="save-the-date"><SaveTheDate /></div>
         </div>
     )
 }

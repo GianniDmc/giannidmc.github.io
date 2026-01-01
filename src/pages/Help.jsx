@@ -8,16 +8,16 @@ function Help() {
             number: 1,
             title: 'Découvrir l\'invitation',
             description: 'Lisez la page d\'accueil pour découvrir la date, le lieu et l\'ambiance de notre mariage.',
-            link: '/',
-            linkText: 'Voir l\'accueil',
+            link: '/#invitation',
+            linkText: 'Voir l\'invitation',
             icon: '📜'
         },
         {
             number: 2,
             title: 'Consulter les détails',
             description: 'Visitez la page Quête pour connaître le programme de la journée et toutes les informations pratiques.',
-            link: '/quest',
-            linkText: 'Voir la quête',
+            link: '/quest#programme',
+            linkText: 'Voir le programme',
             icon: '🗺️'
         },
         {
@@ -41,6 +41,8 @@ function Help() {
             number: 5,
             title: 'Le jour J',
             description: 'Retrouvez-nous au Château de Mauriac le 10 Octobre 2026 pour vivre cette aventure ensemble !',
+            link: '/quest#localisation',
+            linkText: 'Voir la localisation',
             icon: '🏰'
         },
         {
