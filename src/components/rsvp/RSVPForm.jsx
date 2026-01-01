@@ -256,7 +256,7 @@ function RSVPForm() {
                             />
                             <span className="font-crimsonText text-lg group-hover:opacity-80 transition-opacity"
                                 style={{ color: formData.attending === 'yes' ? '#C9A86C' : 'rgba(245, 237, 224, 0.7)' }}>
-                                ✅ Je participe à l'aventure !
+                                ❧ Oui, je serai de l'aventure
                             </span>
                         </label>
                         <label className="flex items-center space-x-3 cursor-pointer group">
@@ -270,7 +270,7 @@ function RSVPForm() {
                             />
                             <span className="font-crimsonText text-lg group-hover:opacity-80 transition-opacity"
                                 style={{ color: formData.attending === 'no' ? '#C9A86C' : 'rgba(245, 237, 224, 0.7)' }}>
-                                😢 Je ne pourrai malheureusement pas venir
+                                — Hélas, je ne pourrai être présent
                             </span>
                         </label>
                     </div>

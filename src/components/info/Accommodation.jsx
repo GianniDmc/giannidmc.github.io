@@ -131,7 +131,7 @@ function Accommodation() {
                 </SectionTitle>
 
                 {/* Info banner */}
-                <div className="mb-8 text-center">
+                <div className="mb-8 text-center space-y-3">
                     <div className="inline-block px-6 py-3"
                         style={{
                             background: 'rgba(76, 86, 63, 0.2)',
@@ -140,6 +140,16 @@ function Accommodation() {
                         <p className="font-crimsonText italic"
                             style={{ color: 'rgba(245, 237, 224, 0.8)' }}>
                             💡 Les hébergements sont triés par distance du château. Réservez tôt !
+                        </p>
+                    </div>
+                    <div className="inline-block px-6 py-3"
+                        style={{
+                            background: 'rgba(150, 71, 52, 0.15)',
+                            border: '1px solid rgba(150, 71, 52, 0.3)'
+                        }}>
+                        <p className="font-crimsonText italic"
+                            style={{ color: '#C9A86C' }}>
+                            📢 Prévenez-nous lorsque vous réservez un hébergement afin que nous puissions mettre à jour les places restantes !
                         </p>
                     </div>
                 </div>
