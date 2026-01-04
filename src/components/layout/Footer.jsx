@@ -28,7 +28,7 @@ function Footer() {
                     {/* Quote */}
                     <p className="font-crimsonText text-xl text-center max-w-md italic"
                         style={{ color: 'rgba(245, 237, 224, 0.8)' }}>
-                        "Un automne pour célébrer notre amour éternel"
+                        "Une quête légendaire commence ici"
                     </p>
 
                     {/* Date */}

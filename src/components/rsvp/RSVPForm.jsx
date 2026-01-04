@@ -175,7 +175,8 @@ function RSVPForm() {
         <div>
             <SectionTitle
                 icon="⚔️"
-                subtitle="Inscrivez votre personnage pour cette quête"
+                subtitle="Créez votre personnage pour cette quête"
+                titleClassName="font-medieval"
             >
                 Fiche de Personnage
             </SectionTitle>

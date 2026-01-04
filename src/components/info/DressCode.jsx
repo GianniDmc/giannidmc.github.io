@@ -54,42 +54,7 @@ function DressCode() {
                         </p>
                     </div>
 
-                    {/* Suggestions */}
-                    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="p-5"
-                            style={{
-                                background: 'rgba(114, 47, 55, 0.15)',
-                                border: '1px solid rgba(114, 47, 55, 0.3)'
-                            }}>
-                            <span className="text-3xl mb-3 block">🏰</span>
-                            <p className="font-cinzel text-gold text-sm tracking-wide">Élégant</p>
-                            <p className="font-crimson text-parchment/60 text-sm mt-2 italic">
-                                Costume, robe de soirée...
-                            </p>
-                        </div>
-                        <div className="p-5"
-                            style={{
-                                background: 'rgba(45, 90, 39, 0.15)',
-                                border: '1px solid rgba(45, 90, 39, 0.3)'
-                            }}>
-                            <span className="text-3xl mb-3 block">🌿</span>
-                            <p className="font-cinzel text-gold text-sm tracking-wide">Champêtre</p>
-                            <p className="font-crimson text-parchment/60 text-sm mt-2 italic">
-                                Tenue décontractée chic...
-                            </p>
-                        </div>
-                        <div className="p-5"
-                            style={{
-                                background: 'rgba(139, 69, 19, 0.15)',
-                                border: '1px solid rgba(139, 69, 19, 0.3)'
-                            }}>
-                            <span className="text-3xl mb-3 block">🎭</span>
-                            <p className="font-cinzel text-gold text-sm tracking-wide">Fantaisie</p>
-                            <p className="font-crimson text-parchment/60 text-sm mt-2 italic">
-                                Touche médiévale bienvenue...
-                            </p>
-                        </div>
-                    </div>
+
 
                     {/* Comfort note */}
                     <div className="mt-10">

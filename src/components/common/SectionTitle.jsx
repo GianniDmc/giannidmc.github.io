@@ -1,4 +1,4 @@
-function SectionTitle({ children, subtitle, icon, className = '' }) {
+function SectionTitle({ children, subtitle, icon, className = '', titleClassName = 'font-lotr' }) {
     return (
         <div className={`text-center mb-12 ${className}`}>
             {/* Top Decoration */}
@@ -15,8 +15,8 @@ function SectionTitle({ children, subtitle, icon, className = '' }) {
                 </div>
             )}
 
-            {/* Main Title - LOTR Style */}
-            <h2 className="font-lotr text-3xl md:text-4xl lg:text-5xl glow-amber"
+            {/* Main Title */}
+            <h2 className={`${titleClassName} text-3xl md:text-4xl lg:text-5xl glow-amber`}
                 style={{ color: '#C9A86C' }}>
                 {children}
             </h2>

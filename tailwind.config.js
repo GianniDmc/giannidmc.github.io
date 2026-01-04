@@ -56,6 +56,7 @@ export default {
                 // Police style Seigneur des Anneaux
                 lotr: ['Aniron', 'Cinzel Decorative', 'serif'],
                 ringbearer: ['Ringbearer', 'Aniron', 'Cinzel Decorative', 'serif'],
+                enchanted: ['Enchanted Land', 'Ringbearer', 'serif'],
                 cinzel: ['Cinzel', 'serif'],
                 crimsonText: ['Crimson Text', 'serif'],
                 body: ['Crimson Text', 'Georgia', 'serif'],

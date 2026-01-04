@@ -27,6 +27,15 @@
   font-display: swap;
 }
 
+/* Police Enchanted Land (titre principal) */
+@font-face {
+  font-family: 'Enchanted Land';
+  src: url('/fonts/enchanted-land.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
