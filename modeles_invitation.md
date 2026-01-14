@@ -9,7 +9,7 @@ Voici les versions finales, prêtes à être copiées. Choisissez celle qui corr
 
 ### Version 1 : Aventure + Hébergement au Château (Inclus)
 
-**Objet :** ⚔️ Une nouvelle quête vous attend : Le Mariage de Gianni & Anaëlle !
+**Objet :** ⚔️ Une nouvelle quête vous attend : Le Mariage de Anaëlle & Gianni !
 
 Salut [Prénom],
 
@@ -31,19 +31,19 @@ Pour le repos des guerriers, **vos quartiers sont d'ores et déjà réservés au
 Nous serions ravis de vous retrouver le lendemain matin (Dimanche) pour un **brunch convivial** et débriefer la soirée ensemble !
 
 **👉 Pour confirmer votre présence et accéder au Guide de Quête (infos pratiques) :**
-https://mariage-gianni-et-anaelle.giannidamico.com
+https://mariage-anaelle-et-gianni.giannidamico.com
 
 *Merci de confirmer votre présence avant le **31 Mai 2026** (Date de fermeture des inscriptions à la guilde).*
 
 On a hâte de partager cette aventure avec vous !
 
-**Gianni & Anaëlle**
+**Anaëlle & Gianni**
 
 ---
 
 ### Version 2 : Aventure + Hébergement Autonome
 
-**Objet :** ⚔️ Une nouvelle quête vous attend : Le Mariage de Gianni & Anaëlle !
+**Objet :** ⚔️ Une nouvelle quête vous attend : Le Mariage de Anaëlle & Gianni !
 
 Salut [Prénom],
 
@@ -66,13 +66,13 @@ Si vous avez besoin d'une auberge pour la nuit, une liste de recommandations est
 Nous serions ravis de vous retrouver le lendemain matin (Dimanche) pour un **brunch convivial** et débriefer la soirée ensemble !
 
 **👉 Pour confirmer votre présence et accéder au Guide de Quête (infos pratiques) :**
-https://mariage-gianni-et-anaelle.giannidamico.com
+https://mariage-anaelle-et-gianni.giannidamico.com
 
 *Merci de confirmer votre présence avant le **31 Mai 2026** (Date de fermeture des inscriptions à la guilde).*
 
 On a hâte de partager cette aventure avec vous !
 
-**Gianni & Anaëlle**
+**Anaëlle & Gianni**
 
 ---
 
@@ -81,7 +81,7 @@ On a hâte de partager cette aventure avec vous !
 
 ### Version 3 : Classique + Hébergement au Château (Inclus)
 
-**Objet :** Invitation au mariage de Gianni & Anaëlle 💍
+**Objet :** Invitation au mariage de Anaëlle & Gianni 💍
 
 Bonjour [Prénom],
 
@@ -104,19 +104,19 @@ Nous serions très heureux de vous compter parmi nous le dimanche matin pour un 
 
 **👉 Réponses & Informations Pratiques :**
 Vous trouverez le formulaire de réponse, le plan d'accès et toutes les informations utiles sur notre site internet :
-https://mariage-gianni-et-anaelle.giannidamico.com
+https://mariage-anaelle-et-gianni.giannidamico.com
 
 *Nous vous remercions de bien vouloir nous confirmer votre présence avant le **31 Mai 2026**.*
 
 Avec toute notre affection,
 
-**Gianni & Anaëlle**
+**Anaëlle & Gianni**
 
 ---
 
 ### Version 4 : Classique + Hébergement Autonome
 
-**Objet :** Invitation au mariage de Gianni & Anaëlle 💍
+**Objet :** Invitation au mariage de Anaëlle & Gianni 💍
 
 Bonjour [Prénom],
 
@@ -140,13 +140,13 @@ Nous serions très heureux de vous compter parmi nous le dimanche matin pour un 
 
 **👉 Réponses & Informations Pratiques :**
 Vous trouverez le formulaire de réponse, le plan d'accès et toutes les informations utiles sur notre site internet :
-https://mariage-gianni-et-anaelle.giannidamico.com
+https://mariage-anaelle-et-gianni.giannidamico.com
 
 *Nous vous remercions de bien vouloir nous confirmer votre présence avant le **31 Mai 2026**.*
 
 Avec toute notre affection,
 
-**Gianni & Anaëlle**
+**Anaëlle & Gianni**
 
 ---
 
@@ -168,7 +168,7 @@ On se marie ! 💍 Et on serait trop contents que tu sois là le **10 Octobre 20
 🥞 On remet ça le **dimanche matin pour un brunch**, on espère vous y voir !
 
 Toutes les infos et le RSVP sont ici :
-👉 https://mariage-gianni-et-anaelle.giannidamico.com
+👉 https://mariage-anaelle-et-gianni.giannidamico.com
 
 Merci de confirmer avant le 31 Mai 2026 !
-Bisous, **Gianni & Anaëlle** ⚔️❤️
+Bisous, **Anaëlle & Gianni** ⚔️❤️

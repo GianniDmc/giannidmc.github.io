@@ -1,8 +1,8 @@
-# 💍 Mariage Gianni & Anaëlle
+# 💍 Mariage Anaëlle & Gianni
 
 Site de mariage au thème **Medieval Fantasy x RPG** pour la célébration au Château de Mauriac le **10 Octobre 2026**.
 
-🌐 **Site en ligne** : [mariage-gianni-et-anaelle.giannidamico.com](https://mariage-gianni-et-anaelle.giannidamico.com)
+🌐 **Site en ligne** : [mariage-anaelle-et-gianni.giannidamico.com](https://mariage-anaelle-et-gianni.giannidamico.com)
 
 ---
 
@@ -108,4 +108,4 @@ function doPost(e) {
 
 ---
 
-Fait avec ❤️ pour Gianni & Anaëlle
+Fait avec ❤️ pour Anaëlle & Gianni
