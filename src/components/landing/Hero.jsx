@@ -81,7 +81,7 @@ function Hero() {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
                     <Link to="/quest">
                         <Button variant="royal" size="lg">
                             📜 Guide de Quête
@@ -93,6 +93,12 @@ function Hero() {
                         </Button>
                     </Link>
                 </div>
+
+                {/* RSVP Deadline reminder */}
+                <p className="font-cinzel text-xs tracking-wider mb-24"
+                    style={{ color: 'rgba(183, 137, 83, 0.7)' }}>
+                    ⏳ Inscriptions ouvertes jusqu'au 31 Mai 2026
+                </p>
             </div>
 
             {/* Scroll indicator - subtle and elegant */}
