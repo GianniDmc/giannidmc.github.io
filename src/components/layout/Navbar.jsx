@@ -112,9 +112,16 @@ function Navbar() {
                         </button>
                     </div>
 
-                    {/* Mobile Navigation */}
+                    {/* Mobile Navigation - positioned below emblem */}
                     {isMenuOpen && (
-                        <div className="md:hidden pb-4">
+                        <div
+                            className="md:hidden absolute left-0 right-0 pb-4 pt-36"
+                            style={{
+                                top: '64px',
+                                background: 'linear-gradient(to bottom, rgba(21, 20, 19, 0.98), rgba(21, 20, 19, 0.95))',
+                                zIndex: 55,
+                            }}
+                        >
                             <div className="flex flex-col space-y-2">
                                 {navLinks.map((link) => (
                                     <Link
