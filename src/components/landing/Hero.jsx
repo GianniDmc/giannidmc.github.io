@@ -43,9 +43,9 @@ function Hero() {
                 {/* Names - LOTR Style with Ringbearer font */}
                 <h1 className="font-ringbearer text-5xl md:text-7xl lg:text-8xl mb-6 glow-amber"
                     style={{ color: '#C9A86C' }}>
-                    <span className="inline-block hover:scale-105 transition-transform duration-300">Gianni</span>
-                    <span className="text-parchment mx-3 md:mx-4 text-3xl md:text-4xl">&</span>
                     <span className="inline-block hover:scale-105 transition-transform duration-300">Anaëlle</span>
+                    <span className="text-parchment mx-3 md:mx-4 text-3xl md:text-4xl">&</span>
+                    <span className="inline-block hover:scale-105 transition-transform duration-300">Gianni</span>
                 </h1>
 
                 {/* Decorative divider with autumn leaves */}

@@ -20,7 +20,7 @@ function Footer() {
                     <div className="flex items-center space-x-4">
                         <span className="text-3xl">💍</span>
                         <span className="font-lotr text-3xl glow-amber" style={{ color: '#C9A86C' }}>
-                            Gianni & Anaëlle
+                            Anaëlle & Gianni
                         </span>
                         <span className="text-3xl">🍂</span>
                     </div>

@@ -54,7 +54,7 @@ function App() {
                 <div className="fixed inset-0 -z-8 pointer-events-none flex items-center justify-center"
                     style={{ paddingTop: '200px' }}>
                     <img
-                        src="/images/embleme_ga_rouge.png"
+                        src="/images/embleme_ag_rouge.png"
                         alt=""
                         className="w-[500px] md:w-[600px] lg:w-[700px] h-auto opacity-[0.035]"
                         style={{

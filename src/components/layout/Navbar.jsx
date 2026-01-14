@@ -66,8 +66,8 @@ function Navbar() {
                             style={{ zIndex: 60 }}
                         >
                             <img
-                                src="/images/embleme_ga_rouge.png"
-                                alt="G&A"
+                                src="/images/embleme_ag_rouge.png"
+                                alt="A&G"
                                 className="w-40 h-40 md:w-48 md:h-48 object-contain group-hover:scale-105 transition-transform duration-300"
                             />
                         </Link>

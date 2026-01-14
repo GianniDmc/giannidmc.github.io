@@ -36,10 +36,6 @@ function RSVP() {
                     </div>
                 </div>
             </div>
-
-            {/* Decorative elements */}
-            <div className="fixed bottom-6 left-6 text-3xl opacity-30 hidden md:block animate-candle">🕯️</div>
-            <div className="fixed bottom-6 right-6 text-3xl opacity-30 hidden md:block animate-candle" style={{ animationDelay: '1s' }}>🕯️</div>
         </div>
     )
 }

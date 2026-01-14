@@ -89,7 +89,7 @@ function SaveTheDate() {
 
                         {/* Signature */}
                         <p className="mt-6 font-medieval text-xl" style={{ color: '#E6B84D' }}>
-                            Gianni & Anaëlle
+                            Anaëlle & Gianni
                         </p>
                     </div>
                 </div>
