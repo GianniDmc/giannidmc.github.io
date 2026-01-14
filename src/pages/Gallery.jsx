@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import SectionTitle from '../components/common/SectionTitle'
 
 function Gallery() {
     // État pour savoir si le mariage a eu lieu et si les photos sont disponibles
@@ -12,16 +11,17 @@ function Gallery() {
     return (
         <div className="min-h-screen pt-48 pb-16">
             {/* Header */}
-            <section className="py-16 px-4">
-                <div className="max-w-4xl mx-auto text-center">
-                    <SectionTitle
-                        icon="📸"
-                        subtitle="Les souvenirs de notre quête légendaire"
-                    >
-                        Chroniques Visuelles
-                    </SectionTitle>
-                </div>
-            </section>
+            <div className="py-16 text-center">
+                <div className="text-5xl mb-6 animate-float">📸</div>
+                <h1 className="font-lotr text-4xl md:text-5xl mb-4 glow-amber"
+                    style={{ color: '#C9A86C' }}>
+                    Chroniques Visuelles
+                </h1>
+                <p className="font-crimsonText text-lg italic"
+                    style={{ color: 'rgba(245, 237, 224, 0.7)' }}>
+                    Les souvenirs de notre quête légendaire
+                </p>
+            </div>
 
             {/* Contenu principal */}
             <section className="py-12 px-4">
