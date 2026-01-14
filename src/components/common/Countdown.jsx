@@ -86,7 +86,7 @@ function Countdown({ targetDate }) {
 
                             {/* Number Display */}
                             <div className="relative">
-                                <p className="font-lotr text-4xl md:text-5xl lg:text-6xl text-center tabular-nums glow-amber"
+                                <p className="font-medieval text-4xl md:text-5xl lg:text-6xl text-center tabular-nums glow-amber"
                                     style={{ color: '#C9A86C' }}>
                                     {String(block.value).padStart(2, '0')}
                                 </p>

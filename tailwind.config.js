@@ -53,10 +53,10 @@ export default {
                 },
             },
             fontFamily: {
-                // Police style Seigneur des Anneaux
-                lotr: ['Aniron', 'Cinzel Decorative', 'serif'],
-                ringbearer: ['Ringbearer', 'Aniron', 'Cinzel Decorative', 'serif'],
-                enchanted: ['Enchanted Land', 'Ringbearer', 'serif'],
+                // Police style Médiéval
+                lotr: ['MedievalSharp', 'serif'],
+                ringbearer: ['Enchanted Land', 'MedievalSharp', 'serif'],
+                enchanted: ['Enchanted Land', 'Cinzel Decorative', 'serif'],
                 cinzel: ['Cinzel', 'serif'],
                 crimsonText: ['Crimson Text', 'serif'],
                 body: ['Crimson Text', 'Georgia', 'serif'],

@@ -1,31 +1,5 @@
-/* Import des polices - Cinzel pour le style elfique/LOTR */
+/* Import des polices - Style médiéval */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=MedievalSharp&display=swap');
-
-/* Police Aniron (style LOTR) */
-@font-face {
-  font-family: 'Aniron';
-  src: url('/fonts/anirm___.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aniron';
-  src: url('/fonts/anirb___.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Police Ringbearer (titres LOTR) */
-@font-face {
-  font-family: 'Ringbearer';
-  src: url('/fonts/ringbearer.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* Police Enchanted Land (titre principal) */
 @font-face {
@@ -75,15 +49,16 @@
 /* ===== COMPONENT STYLES ===== */
 @layer components {
 
-  /* Typography - LOTR Style */
+  /* Typography - Medieval Style */
   .font-lotr {
-    font-family: 'Aniron', 'Ringbearer', 'Cinzel Decorative', serif;
+    font-family: 'MedievalSharp', serif;
     letter-spacing: 0.05em;
   }
 
   .font-ringbearer {
-    font-family: 'Ringbearer', 'Aniron', 'Cinzel Decorative', serif;
-    letter-spacing: 0.02em;
+    font-family: 'Enchanted Land', 'MedievalSharp', serif;
+    letter-spacing: 0.08em;
+    -webkit-text-stroke: 0.3px currentColor;
   }
 
   .font-medieval {
