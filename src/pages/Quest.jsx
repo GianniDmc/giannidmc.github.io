@@ -5,12 +5,9 @@ import DressCode from '../components/info/DressCode'
 
 function Quest() {
     return (
-        <div className="pt-16">
+        <div className="pt-48">
             {/* Page Header */}
-            <div className="py-16 text-center"
-                style={{
-                    background: 'linear-gradient(to bottom, rgba(31, 30, 27, 1), transparent)'
-                }}>
+            <div className="py-16 text-center">
                 <div className="text-5xl mb-6 animate-float">📜</div>
                 <h1 className="font-lotr text-4xl md:text-5xl mb-4 glow-amber"
                     style={{ color: '#C9A86C' }}>

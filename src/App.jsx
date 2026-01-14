@@ -29,7 +29,7 @@ function App() {
                 {/* Base gradient */}
                 <div className="fixed inset-0 -z-30"
                     style={{
-                        background: 'linear-gradient(to bottom, #1F1E1B 0%, #2A2823 30%, #252420 70%, #1F1E1B 100%)'
+                        background: 'linear-gradient(to bottom, #151413 0%, #1A1917 30%, #181716 70%, #151413 100%)'
                     }} />
 
                 {/* Subtle noise texture overlay */}
@@ -50,6 +50,18 @@ function App() {
                         background: 'radial-gradient(ellipse at center, transparent 40%, rgba(31, 30, 27, 0.4) 100%)'
                     }} />
 
+                {/* Subtle watermark emblem - positioned lower to avoid navbar overlap */}
+                <div className="fixed inset-0 -z-8 pointer-events-none flex items-center justify-center"
+                    style={{ paddingTop: '200px' }}>
+                    <img
+                        src="/images/embleme_ga_rouge.png"
+                        alt=""
+                        className="w-[500px] md:w-[600px] lg:w-[700px] h-auto opacity-[0.035]"
+                        style={{
+                            filter: 'grayscale(30%)',
+                        }}
+                    />
+                </div>
                 {/* Decorative corner elements - subtle */}
                 <div className="fixed top-20 left-4 w-24 h-24 -z-5 opacity-[0.04] pointer-events-none hidden lg:block"
                     style={{

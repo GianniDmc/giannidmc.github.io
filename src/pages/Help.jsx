@@ -57,7 +57,7 @@ function Help() {
     ]
 
     return (
-        <div className="min-h-screen pt-24 pb-16">
+        <div className="min-h-screen pt-48 pb-16">
             {/* Header */}
             <section className="py-12 px-4">
                 <div className="max-w-4xl mx-auto text-center">

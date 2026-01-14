@@ -2,12 +2,9 @@ import RSVPForm from '../components/rsvp/RSVPForm'
 
 function RSVP() {
     return (
-        <div className="pt-16 min-h-screen">
+        <div className="pt-48 min-h-screen">
             {/* Page Header */}
-            <div className="py-16 text-center"
-                style={{
-                    background: 'linear-gradient(to bottom, rgba(31, 30, 27, 1), transparent)'
-                }}>
+            <div className="py-16 text-center">
                 <div className="text-5xl mb-6 animate-float">⚔️</div>
                 <h1 className="font-lotr text-4xl md:text-5xl mb-4 glow-amber"
                     style={{ color: '#C9A86C' }}>

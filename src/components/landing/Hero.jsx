@@ -20,7 +20,7 @@ function Hero() {
                 {/* Dark autumn overlay */}
                 <div className="absolute inset-0"
                     style={{
-                        background: 'linear-gradient(to bottom, rgba(31, 30, 27, 0.75) 0%, rgba(31, 30, 27, 0.5) 40%, rgba(31, 30, 27, 0.85) 100%)'
+                        background: 'linear-gradient(to bottom, rgba(31, 30, 27, 0.85) 0%, rgba(31, 30, 27, 0.65) 40%, rgba(31, 30, 27, 0.9) 100%)'
                     }} />
 
                 {/* Vignette effect */}
@@ -37,7 +37,7 @@ function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 text-center px-4 pt-32">
+            <div className="relative z-10 text-center px-4 pt-56">
 
 
                 {/* Names - LOTR Style with Ringbearer font */}
@@ -100,9 +100,7 @@ function Hero() {
                 <span className="text-3xl" style={{ color: 'rgba(183, 137, 83, 0.6)' }}>⌄</span>
             </div>
 
-            {/* Decorative corner elements - candles */}
-            <div className="absolute top-24 left-6 text-3xl opacity-50 hidden lg:block animate-candle">🕯️</div>
-            <div className="absolute top-24 right-6 text-3xl opacity-50 hidden lg:block animate-candle" style={{ animationDelay: '1s' }}>🕯️</div>
+
         </section>
     )
 }
