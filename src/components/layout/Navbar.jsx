@@ -73,7 +73,7 @@ function Navbar() {
                             to="/"
                             onClick={handleClick}
                             className="absolute left-1/2 top-2 group transition-transform duration-500 ease-out"
-                            style={{ 
+                            style={{
                                 zIndex: 60,
                                 transform: `translateX(-50%) scale(${isScrolled ? 0.65 : 1})`,
                                 transformOrigin: 'top center'
@@ -106,7 +106,7 @@ function Navbar() {
 
                             {/* Sound Toggle */}
                             <button
-                                onClick={() => { playClick(); toggleSound(); }}
+                                onClick={() => { toggleSound(); }}
                                 className="p-2 text-xl hover:scale-110 transition-transform"
                                 style={{ color: 'rgba(245, 237, 224, 0.7)' }}
                                 title={soundEnabled ? 'Désactiver les sons' : 'Activer les sons'}
@@ -155,7 +155,7 @@ function Navbar() {
                                 ))}
 
                                 <button
-                                    onClick={() => { playClick(); toggleSound(); }}
+                                    onClick={() => { toggleSound(); }}
                                     className="flex items-center space-x-3 py-3 px-4 transition-all"
                                     style={{ color: 'rgba(245, 237, 224, 0.8)' }}
                                 >
