@@ -6,6 +6,7 @@ const SOUNDS = {
     click2: '/sounds/click2.mp3',
     success: '/sounds/success.mp3',
     konamiCode: '/sounds/konami.mp3',
+    help: '/sounds/help.mp3',
 }
 
 const SoundContext = createContext(null)
@@ -49,6 +50,7 @@ export function SoundProvider({ children }) {
 
     const playSuccess = useCallback(() => playSound('success'), [playSound])
     const playKonami = useCallback(() => playSound('konamiCode'), [playSound])
+    const playHelp = useCallback(() => playSound('help'), [playSound])
 
     const toggleSound = useCallback(() => {
         setSoundEnabled(prev => !prev)
@@ -61,6 +63,7 @@ export function SoundProvider({ children }) {
             playClick,
             playSuccess,
             playKonami,
+            playHelp,
         }}>
             {children}
         </SoundContext.Provider>

@@ -1,14 +1,17 @@
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useSound } from '../../hooks/useSound'
 
 function HelpButton() {
     const location = useLocation()
     const navigate = useNavigate()
     const isOnHelpPage = location.pathname === '/aide'
+    const { playHelp } = useSound()
 
     const handleClick = () => {
         if (isOnHelpPage) {
             navigate(-1) // Go back to previous page
         } else {
+            playHelp()
             navigate('/aide')
         }
     }
