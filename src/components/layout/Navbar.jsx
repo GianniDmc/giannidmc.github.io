@@ -1,12 +1,22 @@
 import { Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSound } from '../../hooks/useSound'
 import oneRingImage from '/images/one_ring.png'
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
     const location = useLocation()
     const { playClick, soundEnabled, toggleSound } = useSound()
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     const navLinks = [
         { path: '/', label: 'Prologue', icon: '📖' },
@@ -58,12 +68,16 @@ function Navbar() {
                             ))}
                         </div>
 
-                        {/* Centered Logo - Oversized emblem */}
+                        {/* Centered Logo - Oversized emblem with scroll animation */}
                         <Link
                             to="/"
                             onClick={handleClick}
-                            className="absolute left-1/2 -translate-x-1/2 top-2 group"
-                            style={{ zIndex: 60 }}
+                            className="absolute left-1/2 top-2 group transition-transform duration-500 ease-out"
+                            style={{ 
+                                zIndex: 60,
+                                transform: `translateX(-50%) scale(${isScrolled ? 0.65 : 1})`,
+                                transformOrigin: 'top center'
+                            }}
                         >
                             <img
                                 src="/images/embleme_ag_rouge.png"
