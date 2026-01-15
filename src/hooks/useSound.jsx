@@ -1,8 +1,9 @@
-import { useState, useEffect, useCallback, createContext, useContext } from 'react'
+import { useState, useEffect, useCallback, createContext, useContext, useRef } from 'react'
 
 // Sound URLs (8-bit sounds)
 const SOUNDS = {
     click: '/sounds/click.mp3',
+    click2: '/sounds/click2.mp3',
     success: '/sounds/success.mp3',
     konamiCode: '/sounds/konami.mp3',
 }
@@ -12,6 +13,7 @@ const SoundContext = createContext(null)
 export function SoundProvider({ children }) {
     const [soundEnabled, setSoundEnabled] = useState(true)
     const [audioCache, setAudioCache] = useState({})
+    const clickToggleRef = useRef(false)
 
     // Preload sounds
     useEffect(() => {
@@ -39,7 +41,12 @@ export function SoundProvider({ children }) {
         }
     }, [soundEnabled, audioCache])
 
-    const playClick = useCallback(() => playSound('click'), [playSound])
+    const playClick = useCallback(() => {
+        const soundName = clickToggleRef.current ? 'click2' : 'click'
+        playSound(soundName)
+        clickToggleRef.current = !clickToggleRef.current
+    }, [playSound])
+
     const playSuccess = useCallback(() => playSound('success'), [playSound])
     const playKonami = useCallback(() => playSound('konamiCode'), [playSound])
 
@@ -59,6 +66,7 @@ export function SoundProvider({ children }) {
         </SoundContext.Provider>
     )
 }
+
 
 export function useSound() {
     const context = useContext(SoundContext)
