@@ -71,6 +71,9 @@ function KonamiOverlay({ onClose }) {
                         Félicitations, noble aventurier.
                         Ta perspicacité sera récompensée lors du Grand Banquet !
                     </p>
+                    <p className="text-parchment/60 text-sm mt-4">
+                        📸 Envoie-nous une capture d'écran pour prouver ta découverte !
+                    </p>
                 </div>
 
                 {/* Achievement badge */}
