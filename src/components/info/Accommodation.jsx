@@ -16,7 +16,7 @@ function Accommodation() {
         { name: 'Val de Garenne', distance: 0.5, distanceLabel: '500m', type: 'Chambre d\'hôtes', icon: '🏠', capacity: '8 pers.', phone: '06 31 96 33 18' },
         // 800m - 1km
         { name: 'Souquié Alain', distance: 0.8, distanceLabel: '800m', type: 'Chambre d\'hôtes', icon: '🏡', capacity: '4 pers.', phone: '05 63 41 71 27' },
-        { name: 'Château de Salettes', distance: 0.8, distanceLabel: '800m', type: 'Hôtel ★★★★', icon: '🏰', capacity: '34 pers.', phone: '05 63 33 60 60', special: true },
+        { name: 'Château de Salettes', distance: 0.8, distanceLabel: '800m', type: 'Hôtel ★★★★', icon: '🏰', capacity: '34 pers.', phone: '05 63 33 60 60', special: true, full: true },
         // 2km
         { name: 'Nicolas Rech', distance: 2, distanceLabel: '2 km', type: 'Gîte de Lagarrigue', icon: '🏡', capacity: '14 pers.', phone: '06 86 40 57 75' },
         { name: 'La Reverdie', distance: 2, distanceLabel: '2 km', type: 'Chambre d\'hôtes', icon: '🏡', capacity: '4 pers.', phone: '07 67 96 95 07' },
@@ -67,7 +67,7 @@ function Accommodation() {
 
     const AccommodationCard = ({ acc, compact = false }) => (
         <div
-            className={`medieval-card group hover:scale-[1.02] transition-all duration-300 relative ${acc.distance < 0.2 ? 'ring-2 ring-moss/50' : ''}`}
+            className={`medieval-card group transition-all duration-300 relative ${acc.full ? 'opacity-60' : 'hover:scale-[1.02]'} ${acc.distance < 0.2 ? 'ring-2 ring-moss/50' : ''}`}
             style={acc.special ? {
                 background: 'linear-gradient(145deg, rgba(150, 71, 52, 0.2), rgba(42, 40, 35, 0.95))',
                 borderColor: '#964734'
@@ -86,6 +86,14 @@ function Accommodation() {
                     <span className="text-xs font-cinzel px-2 py-1"
                         style={{ background: '#964734', color: '#F5EDE0' }}>
                         ★ PREMIUM
+                    </span>
+                </div>
+            )}
+            {acc.full && (
+                <div className="absolute -top-2 -left-2 z-10">
+                    <span className="text-xs font-cinzel px-2 py-1"
+                        style={{ background: '#8B2020', color: '#F5EDE0' }}>
+                        ✗ COMPLET
                     </span>
                 </div>
             )}
