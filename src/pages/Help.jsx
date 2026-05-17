@@ -157,6 +157,15 @@ function Help() {
                                 Contactez-nous à <span style={{ color: '#C9A86C' }}>damico.gianni@yahoo.fr</span>
                             </p>
                         </div>
+
+                        <div className="medieval-card">
+                            <h4 className="font-cinzel text-base mb-2" style={{ color: '#B78953' }}>
+                                🤫 Une surprise à préparer ?
+                            </h4>
+                            <p className="font-crimson text-parchment/80">
+                                Si vous comptez préparer un discours, une animation ou toute autre surprise pour le jour J et que vous ne voulez pas nous mettre dans la confidence, le plus simple est d'écrire à Julie, notre wedding planneuse, à <span style={{ color: '#C9A86C' }}>contact@agence24events.fr</span> en précisant qu'il s'agit du mariage d'Anaëlle et Gianni : c'est elle qui coordonne la journée, elle saura caler votre surprise au bon moment et vous rediriger si besoin. Vous pouvez aussi passer par l'un de nos témoins ou officiants si vous en connaissez un — ils feront le lien avec elle.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
