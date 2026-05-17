@@ -9,3 +9,8 @@
 ```
 Invitation au mariage de Anaëlle & Gianni 💍
 ```
+
+## Mail de rappel (global) — Thème Aventure ⚔️
+```
+📜 Le grimoire s'épaissit — Mises à jour & RSVP avant le 31 Mai
+```
