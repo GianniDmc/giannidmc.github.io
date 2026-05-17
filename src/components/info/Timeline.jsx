@@ -17,10 +17,24 @@ function Timeline() {
             xp: '+500 XP',
         },
         {
-            time: '18h00',
+            time: '16h45',
+            title: 'La Séance Photos',
+            description: '📸 Capture d\'épopée - Les archives du royaume s\'enrichissent',
+            icon: '📸',
+            xp: '+150 XP',
+        },
+        {
+            time: '17h30',
             title: 'Le Vin d\'Honneur',
             description: '🍷 Zone de repos - Buff social activé',
             icon: '🥂',
+            xp: '+200 XP',
+        },
+        {
+            time: '19h00',
+            title: 'Photos de Couple',
+            description: '🎞️ Mode cinématique - La légende immortalisée pour les âges',
+            icon: '💑',
             xp: '+200 XP',
         },
         {
@@ -31,9 +45,9 @@ function Timeline() {
             xp: '+300 XP',
         },
         {
-            time: '22h00',
+            time: '23h00',
             title: 'Le Bal',
-            description: '💃 Mini-jeu danse - Mode multijoueur',
+            description: '🕹️ Phase endgame - DJ live et bornes d\'arcade déverrouillés',
             icon: '🎶',
             xp: '+400 XP',
         },

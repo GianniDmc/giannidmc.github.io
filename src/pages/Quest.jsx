@@ -36,29 +36,7 @@ function Quest() {
 
             {/* Sections */}
 
-            {/* Timeline - Masqué pour l'instant, à décommenter quand les horaires seront confirmés */}
-            {/* <Timeline /> */}
-
-            {/* Placeholder pour le déroulé */}
-            <section id="programme" className="py-20 px-4">
-                <div className="max-w-2xl mx-auto text-center">
-                    <div className="medieval-card">
-                        <div className="text-5xl mb-6">⏳</div>
-                        <h3 className="font-lotr text-2xl mb-4 glow-amber"
-                            style={{ color: '#C9A86C' }}>
-                            Déroulé de la Journée
-                        </h3>
-                        <p className="font-crimsonText text-lg italic"
-                            style={{ color: 'rgba(245, 237, 224, 0.7)' }}>
-                            Le programme détaillé sera dévoilé prochainement...
-                        </p>
-                        <p className="font-cinzel text-sm mt-4"
-                            style={{ color: 'rgba(183, 137, 83, 0.6)' }}>
-                            🔮 Patience, aventurier !
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <Timeline />
 
             <div id="localisation"><Location /></div>
             <div id="hebergements"><Accommodation /></div>
