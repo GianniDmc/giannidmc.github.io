@@ -39,7 +39,17 @@ function DressCode() {
                     </div>
 
                     {/* Moodboard mention */}
-                    <div className="inline-block px-8 py-5"
+                    <button
+                        type="button"
+                        onClick={() => {
+                            const el = document.getElementById('moodboard')
+                            if (el) {
+                                const offset = 80
+                                const top = el.getBoundingClientRect().top + window.scrollY - offset
+                                window.scrollTo({ top, behavior: 'smooth' })
+                            }
+                        }}
+                        className="inline-block px-8 py-5 transition-all hover:scale-[1.02] group cursor-pointer text-left"
                         style={{
                             background: 'rgba(26, 20, 16, 0.6)',
                             border: '1px solid rgba(139, 69, 19, 0.3)'
@@ -48,11 +58,14 @@ function DressCode() {
                             💡 Besoin d'inspiration ?
                         </p>
                         <p className="font-crimson text-parchment/80 max-w-lg">
-                            Nous mettrons à disposition un{' '}
-                            <span className="text-gold">moodboard</span>{' '}
-                            pour celles et ceux qui voudraient s'inspirer de l'ambiance de la journée.
+                            Découvrez le{' '}
+                            <span className="text-gold underline decoration-gold/40 underline-offset-4">moodboard</span>{' '}
+                            pour vous inspirer de l'ambiance de la journée.
                         </p>
-                    </div>
+                        <p className="font-cinzel text-xs text-gold/60 mt-3 tracking-widest uppercase group-hover:text-gold transition-colors">
+                            Voir le moodboard ↓
+                        </p>
+                    </button>
 
 
 

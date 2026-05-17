@@ -2,6 +2,7 @@ import Timeline from '../components/info/Timeline'
 import Location from '../components/info/Location'
 import Accommodation from '../components/info/Accommodation'
 import DressCode from '../components/info/DressCode'
+import Moodboard from '../components/info/Moodboard'
 import SectionTitle from '../components/common/SectionTitle'
 
 function Quest() {
@@ -42,6 +43,7 @@ function Quest() {
             <div id="localisation"><Location /></div>
             <div id="hebergements"><Accommodation /></div>
             <DressCode />
+            <div id="moodboard"><Moodboard /></div>
 
             <section className="py-20 px-4"
                 style={{ background: 'linear-gradient(to bottom, transparent, rgba(42, 31, 24, 0.3), transparent)' }}>
