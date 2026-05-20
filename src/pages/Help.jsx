@@ -22,6 +22,22 @@ function Help() {
         },
         {
             number: 3,
+            title: 'Tenue',
+            description: 'Pas de dress code imposé — venez comme vous êtes ! Consultez la section Tenue pour en savoir plus.',
+            link: '/quest#tenue',
+            linkText: 'Voir la tenue',
+            icon: '👔'
+        },
+        {
+            number: 4,
+            title: 'S\'inspirer — Moodboard',
+            description: 'Envie de vous glisser dans l\'ambiance automnale de la journée ? Un moodboard et une palette de couleurs sont disponibles pour vous inspirer.',
+            link: '/quest#moodboard',
+            linkText: 'Voir le moodboard',
+            icon: '🍂'
+        },
+        {
+            number: 5,
             title: 'Confirmer votre présence',
             description: 'Remplissez le formulaire RSVP pour nous indiquer si vous serez présent. Attention, la quête ferme ses inscriptions le 30 Juin 2026 !',
             link: '/rsvp',
@@ -30,7 +46,7 @@ function Help() {
             important: true
         },
         {
-            number: 4,
+            number: 6,
             title: 'Réserver un hébergement (si besoin)',
             description: 'Si vous venez et avez besoin d\'un logement, consultez la liste des hébergements disponibles près du château.',
             link: '/quest#hebergements',
@@ -38,7 +54,7 @@ function Help() {
             icon: '🏠'
         },
         {
-            number: 5,
+            number: 7,
             title: 'Le jour J',
             description: 'Retrouvez-nous au Château de Mauriac le 10 Octobre 2026 pour vivre cette aventure ensemble !',
             link: '/quest#localisation',
@@ -46,7 +62,7 @@ function Help() {
             icon: '🏰'
         },
         {
-            number: 6,
+            number: 8,
             title: 'Après l\'aventure',
             description: 'Après le mariage, retrouvez les photos de cette journée sur la Galerie. Vous pourrez aussi nous envoyer vos propres clichés pour enrichir nos souvenirs !',
             link: '/gallery',

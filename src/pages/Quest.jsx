@@ -38,11 +38,11 @@ function Quest() {
 
             {/* Sections */}
 
-            <Timeline />
+            <div id="programme"><Timeline /></div>
 
             <div id="localisation"><Location /></div>
             <div id="hebergements"><Accommodation /></div>
-            <DressCode />
+            <div id="tenue"><DressCode /></div>
             <div id="moodboard"><Moodboard /></div>
 
             <section className="py-20 px-4"
