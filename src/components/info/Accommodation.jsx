@@ -167,30 +167,76 @@ function Accommodation() {
                     </div>
                 </div>
 
-                {/* Toggle button */}
-                <div className="text-center mb-8">
-                    <Button
-                        variant="ghost"
+                {/* Toggle: expandable panel for additional accommodations */}
+                <div className="mb-12">
+                    <button
+                        type="button"
                         onClick={() => setShowMore(!showMore)}
+                        aria-expanded={showMore}
+                        aria-controls="accommodations-more"
+                        className="w-full group transition-all duration-300 hover:scale-[1.01]"
+                        style={{
+                            background: showMore
+                                ? 'linear-gradient(145deg, rgba(76, 86, 63, 0.35), rgba(42, 40, 35, 0.95))'
+                                : 'linear-gradient(145deg, rgba(150, 71, 52, 0.25), rgba(76, 86, 63, 0.25))',
+                            border: '2px dashed #B78953',
+                            padding: '1.25rem 1.5rem',
+                        }}
                     >
-                        {showMore ? '🔼 Masquer' : `🔽 Voir ${accommodationsMore.length} hébergements de 2 à 6 km`}
-                    </Button>
-                </div>
-
-                {/* Section: More accommodations (collapsible) */}
-                {showMore && (
-                    <div className="mb-12">
-                        <h3 className="font-cinzel text-xl text-center mb-6 tracking-wider"
-                            style={{ color: '#B78953' }}>
-                            🏡 Hébergements de 2 à 6 km
-                        </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-                            {accommodationsMore.map((acc, index) => (
-                                <AccommodationCard key={index} acc={acc} compact />
-                            ))}
+                        <div className="flex items-center justify-between gap-4 flex-wrap">
+                            <div className="flex items-center gap-4 text-left">
+                                <span
+                                    className="flex items-center justify-center font-cinzel text-2xl shrink-0"
+                                    style={{
+                                        width: '3rem',
+                                        height: '3rem',
+                                        background: '#964734',
+                                        color: '#F5EDE0',
+                                        border: '2px solid #B78953',
+                                        borderRadius: '50%',
+                                    }}
+                                >
+                                    +{accommodationsMore.length}
+                                </span>
+                                <div>
+                                    <p className="font-cinzel uppercase tracking-widest text-base md:text-lg"
+                                        style={{ color: '#F5EDE0' }}>
+                                        {showMore ? 'Masquer les hébergements' : 'Afficher plus d\'hébergements'}
+                                    </p>
+                                    <p className="font-crimsonText italic text-sm mt-1"
+                                        style={{ color: 'rgba(245, 237, 224, 0.7)' }}>
+                                        {accommodationsMore.length} options supplémentaires de 2 à 6 km du château
+                                    </p>
+                                </div>
+                            </div>
+                            <span
+                                className="font-cinzel text-3xl transition-transform duration-300 shrink-0"
+                                style={{
+                                    color: '#B78953',
+                                    transform: showMore ? 'rotate(180deg)' : 'rotate(0deg)',
+                                }}
+                                aria-hidden="true"
+                            >
+                                ⌄
+                            </span>
                         </div>
-                    </div>
-                )}
+                    </button>
+
+                    {/* Section: More accommodations (collapsible) */}
+                    {showMore && (
+                        <div id="accommodations-more" className="mt-8">
+                            <h3 className="font-cinzel text-xl text-center mb-6 tracking-wider"
+                                style={{ color: '#B78953' }}>
+                                🏡 Hébergements de 2 à 6 km
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                                {accommodationsMore.map((acc, index) => (
+                                    <AccommodationCard key={index} acc={acc} compact />
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
 
                 {/* Section: Hôtels */}
                 <div>
