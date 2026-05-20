@@ -97,7 +97,7 @@ function Hero() {
                 {/* RSVP Deadline reminder */}
                 <p className="font-cinzel text-xs tracking-wider mb-24"
                     style={{ color: 'rgba(183, 137, 83, 0.7)' }}>
-                    ⏳ Inscriptions ouvertes jusqu'au 31 Mai 2026
+                    ⏳ Inscriptions ouvertes jusqu'au 30 Juin 2026
                 </p>
             </div>
 

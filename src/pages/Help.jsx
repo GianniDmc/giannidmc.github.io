@@ -23,7 +23,7 @@ function Help() {
         {
             number: 3,
             title: 'Confirmer votre présence',
-            description: 'Remplissez le formulaire RSVP pour nous indiquer si vous serez présent. Attention, la quête ferme ses inscriptions le 31 Mai 2026 !',
+            description: 'Remplissez le formulaire RSVP pour nous indiquer si vous serez présent. Attention, la quête ferme ses inscriptions le 30 Juin 2026 !',
             link: '/rsvp',
             linkText: 'Répondre au RSVP',
             icon: '✉️',

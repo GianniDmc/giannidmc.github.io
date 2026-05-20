@@ -23,7 +23,7 @@ function RSVP() {
                     }}>
                     <span className="text-xl">⏳</span>
                     <span className="font-cinzel text-sm" style={{ color: '#F5EDE0' }}>
-                        Date limite d'inscription : <span style={{ color: '#C9A86C' }}>31 Mai 2026</span>
+                        Date limite d'inscription : <span style={{ color: '#C9A86C' }}>30 Juin 2026</span>
                     </span>
                 </div>
             </div>

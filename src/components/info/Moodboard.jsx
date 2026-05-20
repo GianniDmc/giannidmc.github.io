@@ -11,14 +11,25 @@ const palette = [
 
 // ratio = height / width (used to balance masonry columns)
 const moodboardImages = [
-    { src: '/images/moodboard/board-mariage-automnal.jpg', alt: 'Inspiration mariage tons bordeaux & orange',  ratio: 1.57 },
-    { src: '/images/moodboard/board-medieval.jpg',         alt: 'Inspiration robes médiévales & ambiance fantasy', ratio: 2.17 },
-    { src: '/images/moodboard/board-fleurs-bougies.jpg',   alt: 'Compositions fleurs séchées & bougies',       ratio: 0.63 },
-    { src: '/images/moodboard/board-fleurs-palette.jpg',   alt: 'Bouquet automnal & palette',                  ratio: 1.00 },
-    { src: '/images/moodboard/chateau-cour.jpg',           alt: 'Le château et sa cour',                       ratio: 0.75 },
-    { src: '/images/moodboard/chateau-salle.jpg',          alt: 'Salle de réception du château',               ratio: 0.67 },
-    { src: '/images/moodboard/split-fiction.jpg',          alt: 'Split Fiction — clin d\'œil',                 ratio: 0.56 },
-    { src: '/images/moodboard/inspiration-1.jpg',          alt: 'Inspiration complémentaire',                  ratio: 1.33 },
+    { src: '/images/moodboard/deco-automne-collage.jpg',       alt: 'Décoration de tables — ambiance automne',       ratio: 1.78 },
+    { src: '/images/moodboard/couple-tables-automne.jpg',      alt: 'Couple & tables tons bordeaux et ambre',        ratio: 1.00 },
+    { src: '/images/moodboard/table-ronde-bougies.jpg',        alt: 'Table ronde — fleurs d\'automne & bougies',     ratio: 1.47 },
+    { src: '/images/moodboard/bouquets-collage.jpg',           alt: 'Bouquets d\'automne — inspiration tenues',      ratio: 1.78 },
+    { src: '/images/moodboard/vignoble-coucher-soleil.jpg',    alt: 'Table en vignoble au coucher de soleil',        ratio: 1.49 },
+    { src: '/images/moodboard/bouquets-collage-2.jpg',         alt: 'Collage bouquets automne',                      ratio: 2.17 },
+    { src: '/images/moodboard/table-bordeaux-candelabres.jpg', alt: 'Table bordeaux — fleurs & candélabres dorés',   ratio: 1.34 },
+    { src: '/images/moodboard/bougies-blocs-bois.jpg',         alt: 'Allée de bougies sur blocs en bois',            ratio: 1.23 },
+    { src: '/images/moodboard/decor-bouteilles-ambre.jpg',     alt: 'Décor bouteilles ambre & bouquets',             ratio: 1.69 },
+    { src: '/images/moodboard/composition-dahlia-bougie.jpg',  alt: 'Composition dahlia & bougie — numéro de table', ratio: 1.50 },
+    { src: '/images/moodboard/chateau-cour.jpg',               alt: 'Le château et sa cour',                         ratio: 0.75 },
+    { src: '/images/moodboard/chateau-salle.jpg',              alt: 'Salle de réception du château',                 ratio: 0.67 },
+    { src: '/images/moodboard/split-fiction.jpg',              alt: 'Split Fiction — clin d\'œil',                   ratio: 0.56 },
+    { src: '/images/moodboard/inspiration-1.jpg',              alt: 'Inspiration complémentaire',                    ratio: 1.33 },
+    // -- cachées, à réintroduire si besoin --
+    // { src: '/images/moodboard/board-mariage-automnal.jpg', alt: 'Inspiration mariage tons bordeaux & orange',    ratio: 1.57 },
+    // { src: '/images/moodboard/board-medieval.jpg',         alt: 'Inspiration robes médiévales & ambiance fantasy', ratio: 2.17 },
+    // { src: '/images/moodboard/board-fleurs-bougies.jpg',   alt: 'Compositions fleurs séchées & bougies',         ratio: 0.63 },
+    // { src: '/images/moodboard/board-fleurs-palette.jpg',   alt: 'Bouquet automnal & palette',                    ratio: 1.00 },
 ]
 
 // LPT (Longest Processing Time) : trie par ratio décroissant puis place
@@ -97,8 +108,8 @@ function Moodboard() {
                     Moodboard
                 </SectionTitle>
 
-                {/* Palette HTML native */}
-                <div className="medieval-card mb-12">
+                {/* Palette HTML native — cachée, à réintroduire si besoin */}
+                {false && <div className="medieval-card mb-12">
                     <h3 className="font-medieval text-xl text-gold mb-2 text-center glow-gold">
                         Palette de la Quête
                     </h3>
@@ -130,7 +141,7 @@ function Moodboard() {
                             </button>
                         ))}
                     </div>
-                </div>
+                </div>}
 
                 {/* Grille masonry — distribution équilibrée par hauteur cumulée */}
                 <div className="flex gap-2 sm:gap-4">
