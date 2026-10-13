@@ -14,3 +14,8 @@ Invitation au mariage de Anaëlle & Gianni 💍
 ```
 📜 Le grimoire s'épaissit — Mises à jour & RSVP avant le 30 Juin
 ```
+
+## Mail couleurs du marié (global) — Thème Aventure ⚔️
+```
+🎨 Les couleurs du marié & un dernier appel pour le RSVP
+```

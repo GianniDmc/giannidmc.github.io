@@ -1,4 +1,83 @@
 import { useState } from 'react'
+import Button from '../components/common/Button'
+import { WEDDING_PASSED, ALBUM_URL, UPLOAD_URL } from '../config'
+
+const upcoming = [
+    { icon: '📷', title: 'Photobooth', text: 'Les clichés du photobooth arrivent bientôt.' },
+    { icon: '🎞️', title: 'La photographe', text: 'Les photos de notre photographe seront bientôt dévoilées.' },
+    { icon: '🎬', title: 'La vidéaste', text: 'Le film de la journée arrive prochainement.' },
+]
+
+function PastGallery() {
+    return (
+        <>
+            {/* Album partagé */}
+            <section className="py-12 px-4">
+                <div className="medieval-card max-w-2xl mx-auto text-center py-12 px-8">
+                    <div className="text-6xl mb-6">🏰</div>
+                    <h2 className="font-lotr text-2xl mb-6 glow-amber" style={{ color: '#C9A86C' }}>
+                        L'Album Partagé
+                    </h2>
+                    <p className="font-crimson text-lg text-parchment/80 mb-8 leading-relaxed">
+                        La quête a eu lieu le <span style={{ color: '#B78953' }}>10 Octobre 2026</span>.
+                        <br />
+                        Revivez les moments magiques de cette journée légendaire
+                        à travers les photos et vidéos des invités !
+                    </p>
+                    <a href={ALBUM_URL} target="_blank" rel="noopener noreferrer">
+                        <Button variant="confirm" size="lg">
+                            📸 Voir l'album
+                        </Button>
+                    </a>
+                </div>
+            </section>
+
+            {/* Upload */}
+            <section className="py-12 px-4">
+                <div className="medieval-card max-w-2xl mx-auto text-center py-10 px-8">
+                    <h3 className="font-lotr text-xl mb-4 glow-amber" style={{ color: '#C9A86C' }}>
+                        📤 Appel aux Aventuriers
+                    </h3>
+                    <p className="font-crimson text-parchment/80 leading-relaxed mb-6">
+                        Vous avez capturé des moments de notre quête ?
+                        <br />
+                        Continuez à partager vos photos et vidéos du mariage dans l'album !
+                    </p>
+                    <a href={UPLOAD_URL} target="_blank" rel="noopener noreferrer">
+                        <Button variant="royal" size="md">
+                            ⬆️ Ajouter mes photos & vidéos
+                        </Button>
+                    </a>
+                </div>
+            </section>
+
+            {/* À venir */}
+            <section className="py-12 px-4">
+                <div className="max-w-4xl mx-auto">
+                    <h3 className="font-lotr text-xl text-center mb-8 glow-amber" style={{ color: '#C9A86C' }}>
+                        🔮 Bientôt dévoilés
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {upcoming.map((item) => (
+                            <div key={item.title} className="medieval-card text-center py-8 px-6">
+                                <div className="text-4xl mb-4">{item.icon}</div>
+                                <h4 className="font-cinzel text-base mb-2" style={{ color: '#B78953' }}>
+                                    {item.title}
+                                </h4>
+                                <p className="font-crimson text-parchment/70">
+                                    {item.text}
+                                </p>
+                                <p className="font-cinzel text-xs mt-4 uppercase tracking-widest text-parchment/40">
+                                    ⏳ Prochainement
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
 
 function Gallery() {
     // État pour savoir si le mariage a eu lieu et si les photos sont disponibles
@@ -23,73 +102,79 @@ function Gallery() {
                 </p>
             </div>
 
-            {/* Contenu principal */}
-            <section className="py-12 px-4">
-                <div className="max-w-6xl mx-auto">
-                    {photosAvailable ? (
-                        /* Galerie de photos - À activer après le mariage */
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {/* Les photos seront ajoutées ici */}
-                            <p className="col-span-full text-center text-parchment/60">
-                                Les photos arrivent bientôt...
-                            </p>
+            {WEDDING_PASSED ? (
+                <PastGallery />
+            ) : (
+                <>
+                    {/* Contenu principal */}
+                    <section className="py-12 px-4">
+                        <div className="max-w-6xl mx-auto">
+                            {photosAvailable ? (
+                                /* Galerie de photos - À activer après le mariage */
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                    {/* Les photos seront ajoutées ici */}
+                                    <p className="col-span-full text-center text-parchment/60">
+                                        Les photos arrivent bientôt...
+                                    </p>
+                                </div>
+                            ) : (
+                                /* Message d'attente - Avant le mariage */
+                                <div className="medieval-card max-w-2xl mx-auto text-center py-16 px-8">
+                                    <div className="mb-8">
+                                        <span className="text-6xl">🔮</span>
+                                    </div>
+
+                                    <h2 className="font-lotr text-2xl mb-6 glow-amber" style={{ color: '#C9A86C' }}>
+                                        La quête n'a pas encore eu lieu...
+                                    </h2>
+
+                                    <p className="font-crimson text-lg text-parchment/80 mb-8 leading-relaxed">
+                                        Les chroniques visuelles de notre aventure seront dévoilées
+                                        après le <span style={{ color: '#B78953' }}>10 Octobre 2026</span>.
+                                        <br /><br />
+                                        Revenez explorer cette page après notre grande célébration
+                                        pour revivre les moments magiques de cette journée légendaire !
+                                    </p>
+
+                                    <div className="flex justify-center items-center space-x-4 text-3xl opacity-60">
+                                        <span>🍂</span>
+                                        <span>🏰</span>
+                                        <span>💍</span>
+                                        <span>🏰</span>
+                                        <span>🍂</span>
+                                    </div>
+
+                                    {/* Ornement décoratif */}
+                                    <div className="mt-12 pt-8 border-t border-parchment/10">
+                                        <p className="font-cinzel text-sm text-parchment/50 uppercase tracking-widest">
+                                            ⚔️ En attente de l'aventure ⚔️
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                    ) : (
-                        /* Message d'attente - Avant le mariage */
-                        <div className="medieval-card max-w-2xl mx-auto text-center py-16 px-8">
-                            <div className="mb-8">
-                                <span className="text-6xl">🔮</span>
-                            </div>
+                    </section>
 
-                            <h2 className="font-lotr text-2xl mb-6 glow-amber" style={{ color: '#C9A86C' }}>
-                                La quête n'a pas encore eu lieu...
-                            </h2>
-
-                            <p className="font-crimson text-lg text-parchment/80 mb-8 leading-relaxed">
-                                Les chroniques visuelles de notre aventure seront dévoilées
-                                après le <span style={{ color: '#B78953' }}>10 Octobre 2026</span>.
-                                <br /><br />
-                                Revenez explorer cette page après notre grande célébration
-                                pour revivre les moments magiques de cette journée légendaire !
-                            </p>
-
-                            <div className="flex justify-center items-center space-x-4 text-3xl opacity-60">
-                                <span>🍂</span>
-                                <span>🏰</span>
-                                <span>💍</span>
-                                <span>🏰</span>
-                                <span>🍂</span>
-                            </div>
-
-                            {/* Ornement décoratif */}
-                            <div className="mt-12 pt-8 border-t border-parchment/10">
-                                <p className="font-cinzel text-sm text-parchment/50 uppercase tracking-widest">
-                                    ⚔️ En attente de l'aventure ⚔️
+                    {/* Section instruction pour les invités (visible même avant le mariage) */}
+                    <section className="py-12 px-4">
+                        <div className="max-w-2xl mx-auto text-center">
+                            <div className="medieval-card py-8 px-6">
+                                <h3 className="font-lotr text-xl mb-4 glow-amber" style={{ color: '#C9A86C' }}>
+                                    📷 Appel aux Aventuriers
+                                </h3>
+                                <p className="font-crimson text-parchment/80 leading-relaxed">
+                                    Vous avez capturé des moments de notre quête ?
+                                    <br />
+                                    Partagez vos trésors visuels avec nous !
+                                </p>
+                                <p className="font-cinzel text-sm mt-4" style={{ color: '#B78953' }}>
+                                    Contact : damico.gianni@yahoo.fr
                                 </p>
                             </div>
                         </div>
-                    )}
-                </div>
-            </section>
-
-            {/* Section instruction pour les invités (visible même avant le mariage) */}
-            <section className="py-12 px-4">
-                <div className="max-w-2xl mx-auto text-center">
-                    <div className="medieval-card py-8 px-6">
-                        <h3 className="font-lotr text-xl mb-4 glow-amber" style={{ color: '#C9A86C' }}>
-                            📷 Appel aux Aventuriers
-                        </h3>
-                        <p className="font-crimson text-parchment/80 leading-relaxed">
-                            Vous avez capturé des moments de notre quête ?
-                            <br />
-                            Partagez vos trésors visuels avec nous !
-                        </p>
-                        <p className="font-cinzel text-sm mt-4" style={{ color: '#B78953' }}>
-                            Contact : damico.gianni@yahoo.fr
-                        </p>
-                    </div>
-                </div>
-            </section>
+                    </section>
+                </>
+            )}
         </div>
     )
 }

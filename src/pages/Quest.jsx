@@ -4,6 +4,7 @@ import Accommodation from '../components/info/Accommodation'
 import DressCode from '../components/info/DressCode'
 import Moodboard from '../components/info/Moodboard'
 import SectionTitle from '../components/common/SectionTitle'
+import { WEDDING_PASSED } from '../config'
 
 function Quest() {
     return (
@@ -45,6 +46,7 @@ function Quest() {
             <div id="tenue"><DressCode /></div>
             <div id="moodboard"><Moodboard /></div>
 
+            {!WEDDING_PASSED && (
             <section className="py-20 px-4"
                 style={{ background: 'linear-gradient(to bottom, transparent, rgba(42, 31, 24, 0.3), transparent)' }}>
                 <div className="max-w-4xl mx-auto">
@@ -68,6 +70,7 @@ function Quest() {
                     </div>
                 </div>
             </section>
+            )}
         </div>
     )
 }

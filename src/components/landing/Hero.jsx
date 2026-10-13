@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Countdown from '../common/Countdown'
 import Button from '../common/Button'
+import { WEDDING_PASSED } from '../../config'
 
 // Import image for Vite
 
@@ -59,7 +60,7 @@ function Hero() {
                 <div className="mb-10">
                     <p className="font-cinzel text-lg md:text-xl tracking-[0.3em] mb-3 uppercase"
                         style={{ color: '#B78953' }}>
-                        Save the Date
+                        {WEDDING_PASSED ? 'La légende est écrite' : 'Save the Date'}
                     </p>
                     <p className="font-medieval text-2xl md:text-3xl text-parchment">
                         10 Octobre 2026
@@ -69,36 +70,74 @@ function Hero() {
                 {/* Quote - RPG style */}
                 <div className="max-w-2xl mx-auto mb-12">
                     <p className="font-crimsonText text-xl md:text-2xl text-parchment/90 italic leading-relaxed">
-                        "Deux aventuriers se sont trouvés.
-                        <br />
-                        Ensemble, ils écrivent leur légende."
+                        {WEDDING_PASSED ? (
+                            <>
+                                "Deux aventuriers se sont trouvés.
+                                <br />
+                                Ensemble, ils ont écrit leur légende."
+                            </>
+                        ) : (
+                            <>
+                                "Deux aventuriers se sont trouvés.
+                                <br />
+                                Ensemble, ils écrivent leur légende."
+                            </>
+                        )}
                     </p>
                 </div>
 
-                {/* Countdown */}
-                <div className="mb-14">
-                    <Countdown targetDate={weddingDate} />
-                </div>
+                {WEDDING_PASSED ? (
+                    <>
+                        {/* Thank you */}
+                        <div className="mb-14">
+                            <p className="font-lotr text-2xl md:text-3xl glow-amber"
+                                style={{ color: '#C9A86C' }}>
+                                ✨ Merci d'avoir fait partie de l'aventure ! ✨
+                            </p>
+                        </div>
 
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
-                    <Link to="/quest">
-                        <Button variant="royal" size="lg">
-                            📜 Guide de Quête
-                        </Button>
-                    </Link>
-                    <Link to="/rsvp">
-                        <Button variant="confirm" size="lg">
-                            ⚔️ Rejoindre la Partie
-                        </Button>
-                    </Link>
-                </div>
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
+                            <Link to="/gallery">
+                                <Button variant="confirm" size="lg">
+                                    📸 Voir les photos
+                                </Button>
+                            </Link>
+                            <Link to="/quest">
+                                <Button variant="royal" size="lg">
+                                    📜 Revivre la Quête
+                                </Button>
+                            </Link>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        {/* Countdown */}
+                        <div className="mb-14">
+                            <Countdown targetDate={weddingDate} />
+                        </div>
 
-                {/* RSVP Deadline reminder */}
-                <p className="font-cinzel text-xs tracking-wider mb-24"
-                    style={{ color: 'rgba(183, 137, 83, 0.7)' }}>
-                    ⏳ Inscriptions ouvertes jusqu'au 30 Juin 2026
-                </p>
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
+                            <Link to="/quest">
+                                <Button variant="royal" size="lg">
+                                    📜 Guide de Quête
+                                </Button>
+                            </Link>
+                            <Link to="/rsvp">
+                                <Button variant="confirm" size="lg">
+                                    ⚔️ Rejoindre la Partie
+                                </Button>
+                            </Link>
+                        </div>
+
+                        {/* RSVP Deadline reminder */}
+                        <p className="font-cinzel text-xs tracking-wider mb-24"
+                            style={{ color: 'rgba(183, 137, 83, 0.7)' }}>
+                            ⏳ Inscriptions ouvertes jusqu'au 30 Juin 2026
+                        </p>
+                    </>
+                )}
             </div>
 
             {/* Scroll indicator - subtle and elegant */}

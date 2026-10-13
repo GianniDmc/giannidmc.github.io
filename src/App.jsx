@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
@@ -12,6 +12,7 @@ import Help from './pages/Help'
 import KonamiOverlay from './components/common/KonamiOverlay'
 import { useKonamiCode } from './hooks/useKonamiCode'
 import { SoundProvider } from './hooks/useSound'
+import { WEDDING_PASSED } from './config'
 
 function App() {
     const konamiActivated = useKonamiCode()
@@ -89,7 +90,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/quest" element={<Quest />} />
-                        <Route path="/rsvp" element={<RSVP />} />
+                        <Route path="/rsvp" element={WEDDING_PASSED ? <Navigate to="/" replace /> : <RSVP />} />
                         <Route path="/gallery" element={<Gallery />} />
                         <Route path="/aide" element={<Help />} />
                     </Routes>

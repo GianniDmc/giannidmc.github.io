@@ -1,4 +1,5 @@
 import SectionTitle from '../common/SectionTitle'
+import { WEDDING_PASSED } from '../../config'
 
 function SaveTheDate() {
     return (
@@ -8,10 +9,10 @@ function SaveTheDate() {
             }}>
             <div className="max-w-4xl mx-auto">
                 <SectionTitle
-                    icon="📜"
-                    subtitle="Une invitation à célébrer notre amour"
+                    icon={WEDDING_PASSED ? '💛' : '📜'}
+                    subtitle={WEDDING_PASSED ? 'Quelques mots pour vous, chers aventuriers' : 'Une invitation à célébrer notre amour'}
                 >
-                    L'Invitation
+                    {WEDDING_PASSED ? 'Merci' : "L'Invitation"}
                 </SectionTitle>
 
                 {/* Invitation Card */}
@@ -37,18 +38,38 @@ function SaveTheDate() {
 
                         {/* Main Text */}
                         <div className="space-y-6 font-crimson text-parchment/90 text-lg leading-relaxed max-w-2xl mx-auto">
-                            <p>
-                                Nous avons l'immense joie de vous convier à célébrer notre union.
-                            </p>
+                            {WEDDING_PASSED ? (
+                                <>
+                                    <p>
+                                        Merci du fond du cœur d'avoir partagé ce jour avec nous.
+                                    </p>
 
-                            <p>
-                                Après des années d'aventures partagées, de rires et de complicité,
-                                nous avons décidé de nous dire <span className="italic" style={{ color: '#E6B84D' }}>"oui"</span> pour la vie.
-                            </p>
+                                    <p>
+                                        Vos sourires, vos mots, vos danses et votre présence ont fait
+                                        de ce <span className="italic" style={{ color: '#E6B84D' }}>"oui"</span> un souvenir inoubliable.
+                                    </p>
 
-                            <p>
-                                Votre présence rendrait ce jour encore plus précieux à nos yeux.
-                            </p>
+                                    <p>
+                                        Retrouvez les photos et vidéos de la journée dans la Galerie,
+                                        et n'hésitez pas à y partager les vôtres !
+                                    </p>
+                                </>
+                            ) : (
+                                <>
+                                    <p>
+                                        Nous avons l'immense joie de vous convier à célébrer notre union.
+                                    </p>
+
+                                    <p>
+                                        Après des années d'aventures partagées, de rires et de complicité,
+                                        nous avons décidé de nous dire <span className="italic" style={{ color: '#E6B84D' }}>"oui"</span> pour la vie.
+                                    </p>
+
+                                    <p>
+                                        Votre présence rendrait ce jour encore plus précieux à nos yeux.
+                                    </p>
+                                </>
+                            )}
                         </div>
 
                         {/* Decorative divider */}
@@ -84,7 +105,7 @@ function SaveTheDate() {
 
                         {/* Closing */}
                         <p className="mt-10 font-crimson text-parchment/60 italic">
-                            Dans l'attente de partager ce moment avec vous...
+                            {WEDDING_PASSED ? 'Avec toute notre gratitude...' : "Dans l'attente de partager ce moment avec vous..."}
                         </p>
 
                         {/* Signature */}

@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useSound } from '../../hooks/useSound'
 import oneRingImage from '/images/one_ring.png'
+import { WEDDING_PASSED } from '../../config'
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,7 +24,7 @@ function Navbar() {
         { path: '/quest', label: 'Quête', icon: '📜' },
         { path: '/rsvp', label: 'Rejoindre', icon: '⚔️' },
         { path: '/gallery', label: 'Galerie', icon: '📸' },
-    ]
+    ].filter((link) => !(WEDDING_PASSED && link.path === '/rsvp'))
 
     const handleClick = () => {
         playClick()

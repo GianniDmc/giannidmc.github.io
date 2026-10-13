@@ -1,3 +1,5 @@
+import { WEDDING_PASSED } from '../../config'
+
 function Footer() {
     const currentYear = new Date().getFullYear()
 
@@ -28,7 +30,7 @@ function Footer() {
                     {/* Quote */}
                     <p className="font-crimsonText text-xl text-center max-w-md italic"
                         style={{ color: 'rgba(245, 237, 224, 0.8)' }}>
-                        "Une quête légendaire commence ici"
+                        {WEDDING_PASSED ? '"Une légende est née"' : '"Une quête légendaire commence ici"'}
                     </p>
 
                     {/* Date */}

@@ -1,9 +1,10 @@
 import SectionTitle from '../components/common/SectionTitle'
 import Button from '../components/common/Button'
 import { Link } from 'react-router-dom'
+import { WEDDING_PASSED } from '../config'
 
 function Help() {
-    const steps = [
+    const allSteps = [
         {
             number: 1,
             title: 'Découvrir l\'invitation',
@@ -71,6 +72,23 @@ function Help() {
             future: true
         }
     ]
+
+    const steps = WEDDING_PASSED
+        ? allSteps
+            .filter((step) => step.link !== '/rsvp')
+            .map((step, index) => ({
+                ...step,
+                number: index + 1,
+                ...(step.link === '/gallery' && {
+                    description: 'Retrouvez les photos et vidéos du mariage sur la Galerie, et continuez à partager les vôtres sur l\'album partagé !',
+                    future: false,
+                    important: true,
+                }),
+                ...(step.link === '/quest#localisation' && {
+                    description: 'Le 10 Octobre 2026, au Château de Mauriac, nous avons vécu cette aventure ensemble. Merci !',
+                }),
+            }))
+        : allSteps
 
     return (
         <div className="min-h-screen pt-48 pb-16">
@@ -147,6 +165,7 @@ function Help() {
                     </h2>
 
                     <div className="space-y-4">
+                        {!WEDDING_PASSED && (
                         <div className="medieval-card">
                             <h4 className="font-cinzel text-base mb-2" style={{ color: '#B78953' }}>
                                 ❓ Puis-je venir accompagné(e) ?
@@ -155,6 +174,7 @@ function Help() {
                                 Seules les personnes nommées sur votre invitation sont attendues. Si vous souhaitez venir avec quelqu'un d'autre, merci de nous contacter au préalable.
                             </p>
                         </div>
+                        )}
 
                         <div className="medieval-card">
                             <h4 className="font-cinzel text-base mb-2" style={{ color: '#B78953' }}>
@@ -174,6 +194,7 @@ function Help() {
                             </p>
                         </div>
 
+                        {!WEDDING_PASSED && (
                         <div className="medieval-card">
                             <h4 className="font-cinzel text-base mb-2" style={{ color: '#B78953' }}>
                                 🤫 Une surprise à préparer ?
@@ -182,6 +203,7 @@ function Help() {
                                 Si vous comptez préparer un discours, une animation ou toute autre surprise pour le jour J et que vous ne voulez pas nous mettre dans la confidence, le plus simple est d'écrire à Julie, notre wedding planneuse, à <span style={{ color: '#C9A86C' }}>contact@agence24events.fr</span> en précisant qu'il s'agit du mariage d'Anaëlle et Gianni : c'est elle qui coordonne la journée, elle saura caler votre surprise au bon moment et vous rediriger si besoin. Vous pouvez aussi passer par l'un de nos témoins ou officiants si vous en connaissez un — ils feront le lien avec elle.
                             </p>
                         </div>
+                        )}
                     </div>
                 </div>
             </section>

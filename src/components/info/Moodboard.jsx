@@ -108,8 +108,8 @@ function Moodboard() {
                     Moodboard
                 </SectionTitle>
 
-                {/* Palette HTML native — cachée, à réintroduire si besoin */}
-                {false && <div className="medieval-card mb-12">
+                {/* Palette HTML native — visible publiquement */}
+                <div className="medieval-card mb-12">
                     <h3 className="font-medieval text-xl text-gold mb-2 text-center glow-gold">
                         Palette de la Quête
                     </h3>
@@ -141,7 +141,7 @@ function Moodboard() {
                             </button>
                         ))}
                     </div>
-                </div>}
+                </div>
 
                 {/* Grille masonry — distribution équilibrée par hauteur cumulée */}
                 <div className="flex gap-2 sm:gap-4">
