@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Button from '../components/common/Button'
-import { WEDDING_PASSED, ALBUM_URL, UPLOAD_URL } from '../config'
+import { WEDDING_PASSED, ALBUM_URL, UPLOAD_URL, PHOTOBOOTH_URL, PHOTOGRAPHER_URL, VIDEO_URL } from '../config'
 
-const upcoming = [
-    { icon: '📷', title: 'Photobooth', text: 'Les clichés du photobooth arrivent bientôt.' },
-    { icon: '🎞️', title: 'La photographe', text: 'Les photos de notre photographe seront bientôt dévoilées.' },
-    { icon: '🎬', title: 'La vidéaste', text: 'Le film de la journée arrive prochainement.' },
+const albums = [
+    { icon: '🎞️', title: 'La photographe', text: 'Le magnifique album de notre photographe.', url: PHOTOGRAPHER_URL, cta: "Voir l'album" },
+    { icon: '📷', title: 'Photobooth', text: 'Tous les clichés du photobooth.', url: PHOTOBOOTH_URL, cta: "Voir l'album" },
+    { icon: '🎬', title: 'La vidéaste', text: 'Le film de la journée est en préparation.', url: VIDEO_URL, cta: 'Voir le film' },
 ]
 
 function PastGallery() {
@@ -51,25 +51,35 @@ function PastGallery() {
                 </div>
             </section>
 
-            {/* À venir */}
+            {/* Albums officiels */}
             <section className="py-12 px-4">
                 <div className="max-w-4xl mx-auto">
                     <h3 className="font-lotr text-xl text-center mb-8 glow-amber" style={{ color: '#C9A86C' }}>
-                        🔮 Bientôt dévoilés
+                        🖼️ Les albums de la quête
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {upcoming.map((item) => (
-                            <div key={item.title} className="medieval-card text-center py-8 px-6">
+                        {albums.map((item) => (
+                            <div key={item.title} className="medieval-card text-center py-8 px-6 flex flex-col items-center">
                                 <div className="text-4xl mb-4">{item.icon}</div>
                                 <h4 className="font-cinzel text-base mb-2" style={{ color: '#B78953' }}>
                                     {item.title}
                                 </h4>
-                                <p className="font-crimson text-parchment/70">
+                                <p className="font-crimson text-parchment/70 mb-6">
                                     {item.text}
                                 </p>
-                                <p className="font-cinzel text-xs mt-4 uppercase tracking-widest text-parchment/40">
-                                    ⏳ Prochainement
-                                </p>
+                                <div className="mt-auto">
+                                    {item.url ? (
+                                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                            <Button variant="royal" size="sm">
+                                                {item.cta}
+                                            </Button>
+                                        </a>
+                                    ) : (
+                                        <p className="font-cinzel text-xs uppercase tracking-widest text-parchment/40">
+                                            ⏳ Prochainement
+                                        </p>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
